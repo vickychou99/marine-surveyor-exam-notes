@@ -36,8 +36,8 @@
   .calc .ct { font-weight:bold; color:#9a6b00; margin-bottom:4px; }
   .formula { font-family: ui-monospace, Menlo, "Courier New", monospace; background:#f2f2f2;
     padding:2px 5px; border-radius:4px; font-size:.9em; word-break:break-word; }
-  .fig { text-align:center; margin:12px 0; overflow-x:auto; }
-  .fig svg { max-width:100%; height:auto; }
+  .fig { text-align:center; margin:12px 0; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .fig svg { max-width:none; height:auto; }   /* 原寸顯示，確保字級≥14px；過寬時可左右捲動 */
   .figcap { font-size:.8rem; color:#666; margin-top:4px; padding:0 10px; }
   b.k { color:#b00020; }
   /* floating back-to-top */
@@ -67,6 +67,7 @@
     h2.pdf.first { page-break-before: avoid; }
     h3.year { font-size: 13pt; }
     .qa { box-shadow:none; border-radius:0; page-break-inside: avoid; margin-bottom:13px; }
+    .fig svg { max-width:100%; height:auto; }   /* 列印時縮放符合 A4 */
     .backtop { display:none; }
   }
 </style>
@@ -115,7 +116,7 @@
 <div class="qa"><div class="q"><span class="lbl">二(一)</span>請繪出典型軟鋼之應力應變曲線，並註明降伏應力、降伏應變、降伏點、彈性模數、極限應力。（13 分）</div>
 <div class="a"><span class="lbl">答</span>繪圖標示：比例極限、彈性段（斜率＝彈性模數 E）、上下降伏點(yield point)、降伏應力 σ_y、降伏應變、應變硬化段、極限應力 σ_u、頸縮至破斷。彈性區為直線，降伏後出現平台。</div>
 <div class="fig">
-<svg width="380" height="200" viewBox="0 0 380 200">
+<svg width="626" height="329" viewBox="0 0 380 200">
   <line x1="45" y1="170" x2="360" y2="170" stroke="#333" stroke-width="1.5"/>
   <line x1="45" y1="170" x2="45" y2="15" stroke="#333" stroke-width="1.5"/>
   <text x="365" y="174" font-size="10" text-anchor="end">應變 ε</text>
@@ -328,7 +329,7 @@
 <b class="k">KG = KM − GM = 5.167 − 2.25 = 2.92 m</b>
 </div>
 <div class="fig">
-<svg width="300" height="180" viewBox="0 0 300 180">
+<svg width="467" height="280" viewBox="0 0 300 180">
   <!-- waterline -->
   <line x1="20" y1="70" x2="280" y2="70" stroke="#4a90d9" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="24" y="64" font-size="9" fill="#4a90d9">水線</text>
@@ -373,7 +374,7 @@
 彎矩 BM＝∫SF（極值在 SF=0 處）：BM(12.5)=125 → <b class="k">BM(14.58)=145.8（最大,hog）</b> → BM(18.75)=62.5 → BM(25)=−62.5(sag) → BM(31.25)=62.5 → BM(35.42)=145.8 → 兩端=0<br>★ 注意：最大彎矩在剪力為 0 的 x=14.58（非段邊界 x=12.5）
 </div>
 <div class="fig">
-<svg width="560" height="430" viewBox="0 0 560 430">
+<svg width="1045" height="803" viewBox="0 0 560 430">
   <!-- ====== Load panel ====== -->
   <text x="6" y="30" font-size="10" font-weight="bold" fill="#0b3d6b">負荷強度 q (t/m)</text>
   <line x1="30" y1="75" x2="530" y2="75" stroke="#333" stroke-width="1"/>
@@ -419,7 +420,7 @@
 舯拱（hogging）：中性軸以上受拉、以下受壓 → <b>甲板受拉、龍骨受壓</b>
 </div>
 <div class="fig">
-<svg width="420" height="200" viewBox="0 0 420 200">
+<svg width="692" height="329" viewBox="0 0 420 200">
   <!-- section bar -->
   <rect x="150" y="20" width="26" height="160" fill="#eef3f9" stroke="#0b3d6b" stroke-width="1.5"/>
   <text x="163" y="15" font-size="9" text-anchor="middle">上甲板</text>
@@ -445,7 +446,7 @@
 <div class="qa"><div class="q"><span class="lbl">五(二)</span>對模型與實船雷諾數不同引起之水動力性能差異，如何修正？（10 分）</div>
 <div class="a"><span class="lbl">答</span>模型 Re 低、摩擦阻力相對大，使 KT 偏低、KQ 偏高、效率偏低；依 ITTC 尺度效應修正法，按葉切面阻力係數隨 Re 之變化，對 KT、KQ 作摩擦修正換算至實船 Re。</div>
 <div class="fig">
-<svg width="340" height="220" viewBox="0 0 340 220">
+<svg width="529" height="342" viewBox="0 0 340 220">
   <line x1="40" y1="180" x2="320" y2="180" stroke="#333"/><line x1="40" y1="180" x2="40" y2="20" stroke="#333"/>
   <text x="322" y="184" font-size="9" text-anchor="end">J＝Va/(nD)</text>
   <!-- KT decreasing -->
@@ -491,7 +492,7 @@
 <div class="qa"><div class="q"><span class="lbl">一(一)</span>船舶之 Hogging 和 Sagging 現象及其發生原因。（10 分）</div>
 <div class="a"><span class="lbl">答</span>Hogging（舯拱）：舯部浮力>重量，船舯上拱，甲板受拉、龍骨受壓。Sagging（舯垂）：舯部重量>浮力，船舯下垂，甲板受壓、龍骨受拉。成因：重量與浮力沿船長分布不均，及波浪（波峰在舯→hog；波峰在首尾→sag）。</div>
 <div class="fig">
-<svg width="440" height="170" viewBox="0 0 440 170">
+<svg width="770" height="298" viewBox="0 0 440 170">
   <!-- Hogging -->
   <text x="100" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">Hogging（舯拱）</text>
   <path d="M20,70 Q110,30 200,70" fill="none" stroke="#0b3d6b" stroke-width="2"/>
@@ -555,7 +556,7 @@
 <div class="qa"><div class="q"><span class="lbl">四(二)</span>船舶貨物橫向移動時對大傾角穩度有何影響？請作圖並說明。（10 分）</div>
 <div class="a"><span class="lbl">答</span>貨物橫移使 G 移至 G₁（<span class="formula">GG₁=w·d/W</span>），產生固定傾側力臂，靜穩度曲線整體下移（<span class="formula">GZ′=GZ−GG₁·cosθ</span>），初始即有橫傾角，最大 GZ、穩度範圍與消失角均減小。</div>
 <div class="fig">
-<svg width="380" height="220" viewBox="0 0 380 220">
+<svg width="665" height="385" viewBox="0 0 380 220">
   <line x1="40" y1="180" x2="360" y2="180" stroke="#333"/><line x1="40" y1="180" x2="40" y2="20" stroke="#333"/>
   <text x="362" y="184" font-size="9" text-anchor="end">傾角 θ</text>
   <text x="46" y="18" font-size="9">GZ</text>
@@ -583,7 +584,7 @@
 <div class="qa"><div class="q"><span class="lbl">二</span>請解釋水管鍋爐與火管鍋爐的結構與運行原理，並比較其優缺點及應用範圍。（20 分）</div>
 <div class="a"><span class="lbl">答</span>水管：水在管內、煙在管外，由汽鼓水鼓與水管構成，循環快、可高壓大容量、起汽快、破裂影響小，但結構複雜、水質要求嚴，用於主推進大型。火管：煙在管內、水在殼內，構造簡單、水容量大、耐負荷波動，但壓力容量受限、起汽慢、破裂危險大，用於輔助/廢氣鍋爐。</div>
 <div class="fig">
-<svg width="420" height="160" viewBox="0 0 420 160">
+<svg width="840" height="320" viewBox="0 0 420 160">
   <!-- water tube -->
   <text x="50" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">水管鍋爐</text>
   <circle cx="90" cy="40" r="16" fill="#cfe0f3" stroke="#0b3d6b"/><text x="90" y="44" font-size="7" text-anchor="middle">汽鼓</text>
@@ -605,7 +606,7 @@
 <div class="qa"><div class="q"><span class="lbl">三</span>請說明壓縮式冷凍循環的四個主要階段及運作原理，並繪出相對應之壓力(P)-焓(h)圖。（20 分）</div>
 <div class="a"><span class="lbl">答</span>①壓縮：壓縮機將低壓蒸氣等熵壓縮為高壓高溫過熱氣；②冷凝：冷凝器定壓放熱冷凝為液；③膨脹：經膨脹閥等焓節流降壓降溫；④蒸發：蒸發器定壓吸熱汽化。P-h 圖呈順時針矩形（右上斜壓縮、上方冷凝、左側垂直節流、下方蒸發）。</div>
 <div class="fig">
-<svg width="360" height="230" viewBox="0 0 360 230">
+<svg width="630" height="402" viewBox="0 0 360 230">
   <line x1="45" y1="195" x2="340" y2="195" stroke="#333"/><line x1="45" y1="195" x2="45" y2="20" stroke="#333"/>
   <text x="342" y="199" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">壓力 P</text>
   <!-- saturation dome -->
@@ -639,7 +640,7 @@
 <div class="qa"><div class="q"><span class="lbl">一</span>柴油機工作循環一般簡化為那幾種循環來探討，試分別繪圖說明之。（20 分）</div>
 <div class="a"><span class="lbl">答</span>簡化為三種理想循環：①等容(Otto)—定容加熱；②等壓(Diesel)—定壓加熱（適低速柴油機）；③複合/雙重(Sabathé/Dual)—先定容後定壓加熱，最接近實際高速柴油機。各以 P-V 圖示壓縮、加熱、膨脹、放熱過程。</div>
 <div class="fig">
-<svg width="480" height="180" viewBox="0 0 480 180">
+<svg width="840" height="315" viewBox="0 0 480 180">
   <!-- Otto -->
   <text x="40" y="16" font-size="9" font-weight="bold" fill="#0b3d6b">等容(Otto)</text>
   <line x1="30" y1="150" x2="150" y2="150" stroke="#333"/><line x1="30" y1="150" x2="30" y2="25" stroke="#333"/>
@@ -669,7 +670,7 @@
 <div class="qa"><div class="q"><span class="lbl">三</span>試繪圖說明噴射泵的工作原理，並述明其性能特性。（20 分）</div>
 <div class="a"><span class="lbl">答</span>原理：高壓工作流體經噴嘴將壓力能轉為高速動能，於混合室產生低壓抽吸被輸送流體，混合後經擴散管將動能回升為壓力能排出，無運動件。特性：構造簡單可靠、可抽含氣含雜質流體、自吸；但效率低、需高壓工作流體、性能受背壓與面積比影響。</div>
 <div class="fig">
-<svg width="400" height="140" viewBox="0 0 400 140">
+<svg width="800" height="280" viewBox="0 0 400 140">
   <!-- driving fluid inlet -->
   <rect x="20" y="55" width="70" height="30" fill="#cfe0f3" stroke="#0b3d6b"/>
   <text x="55" y="48" font-size="8" text-anchor="middle">高壓工作流體</text>
@@ -696,7 +697,7 @@
 <div class="qa"><div class="q"><span class="lbl">四</span>試繪出標準冷凍循環之壓力-焓示意圖，並以此圖表示出冷凍性能係數 COP 的定義及計算式。（20 分）</div>
 <div class="a"><span class="lbl">答</span>繪矩形循環（壓縮 1→2、冷凝 2→3、節流 3→4、蒸發 4→1）。<span class="formula">COP = 制冷量/壓縮功 = (h₁−h₄)/(h₂−h₁)</span>，即蒸發器吸熱量與壓縮機耗功之比。</div>
 <div class="fig">
-<svg width="360" height="210" viewBox="0 0 360 210">
+<svg width="630" height="368" viewBox="0 0 360 210">
   <line x1="45" y1="180" x2="340" y2="180" stroke="#333"/><line x1="45" y1="180" x2="45" y2="20" stroke="#333"/>
   <text x="342" y="184" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">P</text>
   <path d="M120,170 Q150,50 200,45 Q255,50 290,170" fill="none" stroke="#bbb" stroke-width="1.5"/>
@@ -728,7 +729,7 @@
 <div class="qa"><div class="q"><span class="lbl">三</span>請於 P-h 圖中繪製附圖雙級壓縮閃激室冷凍機之熱力循環，並說明閃激室對 COP 之影響。（20 分）</div>
 <div class="a"><span class="lbl">答</span>閃激室將節流後汽液分離，飽和蒸氣抽至高壓壓縮機入口（中間補氣冷卻），飽和液再節流入蒸發器。影響：移除閃發蒸氣並作中間冷卻，降低高壓級吸氣過熱、減少壓縮功並增大製冷量，<b class="k">提高 COP</b>。</div>
 <div class="fig">
-<svg width="370" height="215" viewBox="0 0 370 215">
+<svg width="740" height="430" viewBox="0 0 370 215">
   <line x1="45" y1="185" x2="350" y2="185" stroke="#333"/><line x1="45" y1="185" x2="45" y2="20" stroke="#333"/>
   <text x="352" y="189" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">P</text>
   <path d="M115,175 Q150,45 205,40 Q260,45 300,175" fill="none" stroke="#bbb" stroke-width="1.5"/>
@@ -751,7 +752,7 @@
 <div class="qa"><div class="q"><span class="lbl">四</span>請說明離心式泵之工作原理，並繪製其特性曲線，詳述效率、出口壓力、輸入功率隨排量變化之情形。（20 分）</div>
 <div class="a"><span class="lbl">答</span>原理：葉輪高速旋轉，離心力使液體獲動能與壓力，於蝸殼/擴散段轉為壓力能排出，葉輪中心形成低壓吸入。特性曲線：揚程隨排量增加而下降(H-Q)；效率先升後降有最佳效率點(BEP)；輸入功率隨排量增大而上升。</div>
 <div class="fig">
-<svg width="360" height="210" viewBox="0 0 360 210">
+<svg width="630" height="368" viewBox="0 0 360 210">
   <line x1="45" y1="175" x2="340" y2="175" stroke="#333"/><line x1="45" y1="175" x2="45" y2="20" stroke="#333"/>
   <text x="342" y="179" font-size="9" text-anchor="end">排量 Q</text>
   <!-- Head curve (decreasing) -->
