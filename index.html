@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>驗船師高考考題詳解（111–114 年）</title>
+<style>
+  :root { --navy:#0b3d6b; --green:#1f7a4d; }
+  * { box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang TC","PingFang SC","Heiti TC","STHeiti","Songti TC",sans-serif;
+    font-size: 17px; line-height: 1.75; color: #1a1a1a;
+    margin: 0 auto; max-width: 820px; padding: 14px 12px 90px; background: #eef1f5;
+  }
+  h1 { font-size: clamp(1.1rem, 5vw, 1.5rem); text-align: center; margin: 6px 0 4px; color: var(--navy); line-height:1.35; word-break: break-word; }
+  .subtitle { text-align: center; color: #555; font-size: .82rem; margin-bottom: 18px; line-height:1.5; }
+  /* clickable TOC */
+  .toc { background: #fff; border: 1px solid #d6e0ee; border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .toc h2 { margin: 0 0 8px; font-size: 1.05rem; color: var(--navy); }
+  .toc ul { margin: 0; padding: 0; list-style: none; }
+  .toc a { display: block; padding: 11px 13px; margin: 7px 0; background: #eef3f9; border-radius: 9px;
+    color: var(--navy); text-decoration: none; font-weight: bold; font-size: .92rem; line-height:1.4; }
+  .toc a:active { background: #d8e4f4; }
+  h2.pdf { font-size: 1.2rem; color: #fff; background: var(--navy); padding: 12px 14px; border-radius: 9px;
+    margin: 28px 0 14px; scroll-margin-top: 8px; }
+  h3.year { font-size: 1.06rem; color: var(--navy); border-bottom: 2px solid var(--navy);
+    padding-bottom: 6px; margin: 22px 0 12px; }
+  /* Q&A cards */
+  .qa { margin: 0 0 15px; background: #fff; border-radius: 11px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+  .q { background: #eef3f9; border-left: 5px solid var(--navy); padding: 12px 14px; }
+  .q .lbl { font-weight: bold; color: var(--navy); margin-right: 5px; }
+  .a { padding: 12px 14px; border-left: 5px solid #c9d6e8; }
+  .a .lbl { font-weight: bold; color: var(--green); margin-right: 4px; }
+  .calc { background:#fff8ec; border:1px solid #f0d9a8; border-radius:9px; padding:12px 14px; margin:10px 14px; font-size:.95rem; }
+  .calc .ct { font-weight:bold; color:#9a6b00; margin-bottom:4px; }
+  .formula { font-family: ui-monospace, Menlo, "Courier New", monospace; background:#f2f2f2;
+    padding:2px 5px; border-radius:4px; font-size:.9em; word-break:break-word; }
+  .fig { text-align:center; margin:12px 0; overflow-x:auto; }
+  .fig svg { max-width:100%; height:auto; }
+  .figcap { font-size:.8rem; color:#666; margin-top:4px; padding:0 10px; }
+  b.k { color:#b00020; }
+  /* floating back-to-top */
+  .backtop { position:fixed; right:14px; bottom:16px; width:48px; height:48px; border-radius:50%;
+    background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center;
+    text-decoration:none; font-size:22px; box-shadow:0 2px 8px rgba(0,0,0,.35); z-index:99; }
+
+  /* 年度可收合 */
+  h3.year.toggle { cursor: pointer; position: relative; padding-right: 30px; user-select: none; }
+  h3.year.toggle::after { content: '▾'; position: absolute; right: 8px; top: 50%; transform: translateY(-60%);
+    font-size: .9em; transition: transform .2s; }
+  h3.year.toggle.collapsed::after { transform: translateY(-50%) rotate(-90deg); }
+  .year-body.hidden { display: none; }
+
+  /* ===== PDF / 列印仍維持 A4 排版（全部展開） ===== */
+  @media print {
+    @page { size: A4; margin: 16mm 14mm; }
+    html { scroll-behavior: auto; }
+    body { font-size: 10.5pt; line-height: 1.6; background:#fff; max-width:none; margin:0; padding:0; }
+    .year-body.hidden { display: block !important; }
+    h3.year.toggle::after { display: none; }
+    h1 { font-size: 20pt; }
+    .subtitle { font-size: 11pt; }
+    .toc { background:#f4f7fb; box-shadow:none; }
+    .toc a { background:#f4f7fb; padding:2px 0; margin:2px 0; font-weight:normal; }
+    h2.pdf { font-size: 15pt; page-break-before: always; }
+    h2.pdf.first { page-break-before: avoid; }
+    h3.year { font-size: 13pt; }
+    .qa { box-shadow:none; border-radius:0; page-break-inside: avoid; margin-bottom:13px; }
+    .backtop { display:none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<h1>驗船師高等考試 — 考題完整詳解</h1>
+<div class="subtitle">111 ～ 114 年 ｜ 船體檢驗・輪機檢驗・造船原理・輪機工程｜完整題目＋詳答（造船原理含計算式與圖）</div>
+
+<div class="toc">
+  <h2>目錄</h2>
+  <ul>
+    <li><a href="#sec1">一、船體檢驗（10210）— 114 / 113 / 112 / 111 年</a></li>
+    <li><a href="#sec2">二、輪機檢驗（10220）— 114 / 113 / 112 / 111 年</a></li>
+    <li><a href="#sec3">三、造船原理（10230）— 114 / 113 / 112 / 111 年 ★含計算式與圖</a></li>
+    <li><a href="#sec4">四、輪機工程（10240）— 114 / 113 / 112 / 111 年 ★含圖</a></li>
+  </ul>
+</div>
+
+<!-- ============== PDF 1 船體檢驗 ============== -->
+<h2 class="pdf first" id="sec1">一、船體檢驗（代號 10210）</h2>
+
+<h3 class="year">114 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>繪圖並說明國際公約、船級規範與政府法規的關係。（20 分）</div>
+<div class="a"><span class="lbl">答</span>IMO 國際公約（SOLAS、MARPOL、載重線等）訂全球最低安全與防污標準；船旗國政府將公約轉化為國內法規並授權驗船機構執行（法定檢驗）；船級協會規範（如 CR）為技術細節標準。層級為公約→政府法規→船級規範，驗船機構同時受政府委託執行法定檢驗與依規範執行船級檢驗。（繪三層金字塔或三圈交集圖）</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>依據中國驗船中心船級規範，新船簽發船級證書前應通過那些程序？（20 分）</div>
+<div class="a"><span class="lbl">答</span>圖面審查核准→材料及機電設備認可（廠驗）→建造中分段檢驗（銲接、結構組裝）→水壓及密性試驗→傾斜試驗→碼頭試俥→海上試俥→完工檢驗合格→入級審查委員會核定→簽發船級證書。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>依據國際船級協會聯合會（IACS）技術文件，說明船體檢驗的方法。（20 分）</div>
+<div class="a"><span class="lbl">答</span>含全面檢驗（Overall）、近觀檢驗（Close-up）、測厚（UTM）、加強檢驗計畫（ESP）、防腐塗層與壓載艙狀態評估；依船齡分年度、中間、特別檢驗等級，必要時執行結構與密性試驗。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>說明船體銲道的非破壞性檢驗原理及其優缺點。（20 分）</div>
+<div class="a"><span class="lbl">答</span>目視(VT)：簡便僅表面。磁粉(MT)：磁漏顯示，僅鐵磁材表面/近表面。液滲(PT)：毛細現象，限表面開口缺陷、不限材質。射線(RT)：透照顯內部體積缺陷、有底片，但有輻射、對裂縫方向敏感。超音波(UT)：脈衝反射測內部及深度、即時，但需技術判讀、有盲區。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>說明船舶海上試俥的目的，並依據中國驗船中心船級規範，詳述船舶之速度試驗、迴旋試驗及倒俥試驗等海上試俥項目內容。（20 分）</div>
+<div class="a"><span class="lbl">答</span>目的為驗證實船性能符合設計、規範與契約。速度試驗：測不同主機轉速對應之船速與馬力。迴旋試驗：左右滿舵測迴旋圈之戰術直徑、進距、橫距。倒俥試驗：前進中全速倒俥，測停船衝程與所需時間。另含操舵、Z 形、錨機、振動等。</div></div>
+
+<h3 class="year">113 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>依中國驗船中心鋼船建造與入級規範，現成船特別檢驗，請試述壓載管路系統的檢驗為何？雙重底艙、深艙、壓載艙、尖艙的邊界應實施的測試為何？（10 分）</div>
+<div class="a"><span class="lbl">答</span>壓載管路檢查管、閥腐蝕洩漏與固定，必要時通水確認暢通。各艙邊界應實施密性（structural/leak）試驗，通常以水壓頭（至溢流管頂或最高水線）做水壓試驗，確認結構強度與水密性。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>新造船船廠應提供檢查和測試項目之計畫，提交給驗船師核閱。請試述包括的項目為何？（10 分）</div>
+<div class="a"><span class="lbl">答</span>施工與銲接程序、各階段 NDT 項目與比例、結構密性/水壓試驗計畫、材料與設備認可證明、尺寸量測、塗裝檢查、機械安裝與試俥項目，及驗船師之檢驗暫停點(hold point)。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二(一)</span>請繪出典型軟鋼之應力應變曲線，並註明降伏應力、降伏應變、降伏點、彈性模數、極限應力。（13 分）</div>
+<div class="a"><span class="lbl">答</span>繪圖標示：比例極限、彈性段（斜率＝彈性模數 E）、上下降伏點(yield point)、降伏應力 σ_y、降伏應變、應變硬化段、極限應力 σ_u、頸縮至破斷。彈性區為直線，降伏後出現平台。</div>
+<div class="fig">
+<svg width="380" height="200" viewBox="0 0 380 200">
+  <line x1="45" y1="170" x2="360" y2="170" stroke="#333" stroke-width="1.5"/>
+  <line x1="45" y1="170" x2="45" y2="15" stroke="#333" stroke-width="1.5"/>
+  <text x="365" y="174" font-size="10" text-anchor="end">應變 ε</text>
+  <text x="50" y="14" font-size="10">應力 σ</text>
+  <!-- elastic line -->
+  <line x1="45" y1="170" x2="120" y2="80" stroke="#0b3d6b" stroke-width="2"/>
+  <!-- yield plateau -->
+  <path d="M120,80 L128,72 L138,86 L150,80 L175,80" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <!-- strain hardening to ultimate -->
+  <path d="M175,80 Q240,30 285,40" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <!-- necking down to fracture -->
+  <path d="M285,40 Q320,55 335,80" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="332" y="78" font-size="16" fill="#b00020">×</text>
+  <!-- markers -->
+  <line x1="45" y1="80" x2="120" y2="80" stroke="#bbb" stroke-dasharray="3,3"/>
+  <text x="8" y="84" font-size="9" fill="#1f7a4d">σ_y 降伏應力</text>
+  <line x1="45" y1="40" x2="285" y2="40" stroke="#bbb" stroke-dasharray="3,3"/>
+  <text x="8" y="36" font-size="9" fill="#b00020">σ_u 極限應力</text>
+  <circle cx="120" cy="80" r="3" fill="#1f7a4d"/>
+  <text x="124" y="68" font-size="8.5">上降伏點</text>
+  <text x="78" y="135" font-size="8.5" fill="#0b3d6b">彈性段斜率=E</text>
+  <text x="300" y="92" font-size="8.5" fill="#b00020">破斷</text>
+</svg>
+<div class="figcap">圖：軟鋼應力—應變曲線（標示彈性模數 E、降伏點、降伏/極限應力）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二(二)</span>A 級普通強度鋼的最小降伏應力是多少？（2 分）</div>
+<div class="a"><span class="lbl">答</span>235 N/mm²（235 MPa）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二(三)</span>若鋼材無明顯之降伏現象時，請試述如何決定降伏應力。（5 分）</div>
+<div class="a"><span class="lbl">答</span>採 0.2% 偏移法（offset method）：作平行於彈性段、自應變 0.2% 處之直線，與曲線交點對應之應力即為規定降伏強度（σ0.2 / proof stress）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(一)</span>船側板板厚 t<sub>s</sub>=0.91·F·m/I，源於材料力學中何種構件公式、承受之負荷為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>源於樑之橫向剪應力公式 <span class="formula">τ = V·Q/(I·t)</span>；承受負荷為船體梁之縱向（垂向）剪力。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(二)</span>貨櫃船隔艙壁局部淨板厚 t=14.9·S<sub>W</sub>·√(1.05P/σ<sub>F</sub>)，源於何種公式、承受之負荷為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>源於板受側向均布壓力之彎曲強度公式；承受負荷為側向均布壓力 P（隔艙壁水壓）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四(一)</span>IP Code 中英文全名為何？（6 分）</div>
+<div class="a"><span class="lbl">答</span>International Code of Safety for Ships Carrying Industrial Personnel（載運工業人員船舶安全國際章程）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(二)</span>請試述新增此法規之主因。（8 分）</div>
+<div class="a"><span class="lbl">答</span>離岸風電等海事工業興起，需安全運送大量工業人員(IP)往返離岸設施；原 SOLAS 對非客非貨之 12 人以上工業人員運送無適當規範，故新增以規範其安全。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(三)</span>檢驗符合 IP Code 之船舶，應核發什麼文件以及附有什麼紀錄？（6 分）</div>
+<div class="a"><span class="lbl">答</span>核發「工業人員船舶安全證書」(Certificate of Fitness/Safety for Industrial Personnel Ships)，並附「設備紀錄」(Record of Equipment)。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五(一)</span>（船長 393m、235579GT 新造貨櫃輪）填寫載重線勘劃條件紀錄時，「Raised quarterdeck」之定義為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>升高後甲板：船尾一段較主上甲板低、但高於乾舷甲板之圍蔽上層建築（艉部局部升高之甲板結構）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(二)</span>載重線「WNA」是指什麼？該輪應如何勘劃該載重線？（5 分）</div>
+<div class="a"><span class="lbl">答</span>冬季北大西洋載重線(Winter North Atlantic)，適用船長≤100 m 之船冬季航經北大西洋。本輪 393 m＞100 m，<b class="k">免勘劃 WNA 線</b>。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">六(一)</span>（MARPOL Annex VI 附頁）依規則 2 之定義，「建造已達類似階段」為何？（3 分）</div>
+<div class="a"><span class="lbl">答</span>可辨識為某特定船舶之建造已開始，且已開始組裝達 50 噸、或全部結構材料預估量之 1%（取較小者）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">六(二)</span>「0.50% m/m」所指為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>燃油含硫量以質量分率計，每 100 質量單位燃油中硫含量不超過 0.50 質量單位。</div></div>
+<div class="qa"><div class="q"><span class="lbl">六(三)</span>船舶運營於排放管制區域內時，應使用的方式有那兩種？（10 分）</div>
+<div class="a"><span class="lbl">答</span>.1 使用含硫量≤0.10% m/m 之燃油；.2 採等效方法（如廢氣洗滌系統 SOx Scrubber）使 SOx 排放達等效標準。</div></div>
+<div class="qa"><div class="q"><span class="lbl">六(四)</span>該輪柴油機裝有硫氧化物洗滌系統，應填寫在何處？（2 分）</div>
+<div class="a"><span class="lbl">答</span>填於附頁 2.3 之「等效方法」欄（2.3.2 等效/廢氣清淨系統），並註明經核准之等效裝置。</div></div>
+
+<h3 class="year">112 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>國際線船舶，請試述法定檢驗與船級檢驗在檢驗機構、檢驗依據和核發證書上之差異。（15 分）</div>
+<div class="a"><span class="lbl">答</span>法定檢驗依國際公約/船旗國法規，由主管機關或其授權驗船機構(RO)執行，核發法定證書（載重線、安全構造等）；船級檢驗依船級規範，由船級協會執行，核發船級證書。前者確保符合法律，後者確保船體機械符合技術規範。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>依船舶法第 11 條，總噸位 100 以上或乘客定額超過 150 人之客船（99/12/10 後建造或輸入），應具備由什麼機構核發的什麼證書？（5 分）</div>
+<div class="a"><span class="lbl">答</span>應具備由驗船機構（船級協會，如 CR）核發之「船級證書」。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>依 IMO 港口國管制程序，請試述有關國際載重線公約，船舶可能被留置的缺失。（10 分）</div>
+<div class="a"><span class="lbl">答</span>乾舷不足或超載、載重線標誌錯誤/不清、艙口蓋及開口關閉裝置（風雨密門、空氣管、通風筒）損壞無法水密、舷牆/排水口/欄杆嚴重缺損、載重線證書失效等，凡影響水密完整性與儲備浮力者。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(一)</span>檢驗貨櫃輪橫跨甲板結構發現挫曲，請試述可能造成結構損傷之原因及應如何修理。（10 分）</div>
+<div class="a"><span class="lbl">答</span>原因：薄板受壓縮應力（船體扭轉/橫向變形、貨櫃集中載荷、腐蝕減薄、銲接殘留應力）超過挫曲臨界值致面外挫曲。修理：評估範圍，嚴重者換新板並加裝防挫扶強材補強，輕微者矯正後加強。</div></div>
+<div class="qa"><div class="q"><span class="lbl">三(二)</span>請試述水壓試驗、噴水試驗、壓縮空氣填角銲道試驗、真空箱試驗，所適用者為結構或洩漏試驗。（10 分）</div>
+<div class="a"><span class="lbl">答</span>水壓試驗→結構試驗；噴水(hose)試驗→洩漏試驗；壓縮空氣填角銲道試驗→洩漏試驗；真空箱試驗→洩漏試驗。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四(一)</span>請試述 SOLAS 第 II-2 章第 3 條名詞定義：C 級分隔、主豎區、控制站。（10 分）</div>
+<div class="a"><span class="lbl">答</span>C 級分隔：以不燃材料構成、無隔熱及貫火限制要求之分隔。主豎區：以耐火分隔將船體分成、平均長寬一般≤40 m 之區劃，限制火災蔓延。控制站：設無線電、主要航行設備、應急電源或消防控制/記錄設備之處所。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(二)</span>依 SOLAS 第 II-2 章第 2 條，請試述防火安全的功能要求。（10 分）</div>
+<div class="a"><span class="lbl">答</span>以耐火分隔分主豎區與水平區；起居處所與其他部分以邊界分隔；限制可燃材料；火源區之火災偵測；蔓延抑制；煙與毒控制；提供逃生通道；滅火設備即時可用；降低貨物易燃蒸氣風險。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>依國際載重線公約第 2 章載重線勘劃條件，請列舉 5 個主要包含之項目。（10 分）</div>
+<div class="a"><span class="lbl">答</span>①船體結構強度足夠；②上層建築及甲板室開口封閉裝置；③貨艙口及開口風雨密；④機艙開口、通風筒、空氣管之保護與關閉；⑤舷側出排水口、舷窗、進排水閥（另：欄杆/舷牆/排水口、船員保護）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">六(一)</span>MARPOL Annex IV：污水所指為何？何種船舶適用而應備符合第 9 條之污水處理系統？（10 分）</div>
+<div class="a"><span class="lbl">答</span>污水：廁所小便器排泄物、醫務處所及裝活動物處所之排水，及與之混合之廢水。適用：國際航線總噸位≥400，或核定載運>15 人之船舶，應備符合第 9 條之污水處理系統。</div></div>
+<div class="qa"><div class="q"><span class="lbl">六(二)</span>依第 11 條，除第 3 條例外規定外，客船以外船舶之污水排放規定為何？（10 分）</div>
+<div class="a"><span class="lbl">答</span>經核准污水處理設備處理後可排放；或經粉碎消毒之污水距最近陸地>3 浬排放；未處理污水須距最近陸地>12 浬、船速≥4 節下以中等速率排放，不得一次傾排。</div></div>
+
+<h3 class="year">111 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>依據中國驗船中心船級規範，海上試俥項目有那些？（10 分）</div>
+<div class="a"><span class="lbl">答</span>速度試驗、迴旋試驗、Z 形操縱試驗、倒俥/停船試驗、最低迴轉速度試驗、操舵裝置試驗、錨機試驗、主機各負荷試驗、振動測量、應急設備試驗等。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>試說明下列船體檢驗名詞之意涵：全面檢驗、近觀檢驗、可疑區域、危險結構區域、嚴重腐蝕。（每小題 4 分，共 20 分）</div>
+<div class="a"><span class="lbl">答</span>全面檢驗：對結構整體作一般性目視檢查。近觀檢驗：於可伸手觸及範圍對細部近距離詳檢。可疑區域：經認定有腐蝕或需監控、或已達實質腐蝕之區域。危險結構區域：經計算或經驗顯示易破裂、挫曲、變形或腐蝕而危及完整性之區域。嚴重腐蝕：蝕耗超過容許範圍 75%、但仍在限值內。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>驗船師執行船級歲驗，對原已標註為「可疑區域」和「嚴重腐蝕」的結構區域應有何作為？（10 分）</div>
+<div class="a"><span class="lbl">答</span>可疑區域應實施近觀檢驗及測厚；嚴重腐蝕區域應擴大近觀與測厚範圍、加密量測點，必要時換新或加強，並納入後續年度歲驗加強監控（年度測厚）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>船舶申請勘劃多組載重線的原因為何？其標誌、證書之管理及使用上要注意什麼？（10 分）</div>
+<div class="a"><span class="lbl">答</span>因不同用途/航線/季節或可變更乾舷（如兼木材船）而申請。注意：各組載重線標誌須清楚標示避免混淆；證書載明各組勘劃條件與適用情況；使用時須符合對應勘劃條件，僅依當時核可之載重線裝載。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五(一)</span>AFS 公約：何謂防污系統？（5 分）</div>
+<div class="a"><span class="lbl">答</span>用於船上以控制或防止生物附著之塗料、表面處理、表面或裝置。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(二)</span>何種船舶應持有國際防污系統證書？（5 分）</div>
+<div class="a"><span class="lbl">答</span>國際航線總噸位≥400 之船舶應持有國際防污系統證書(IAFS Certificate)。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(三)</span>目前防污系統禁止使用的物質為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>有機錫化合物(organotin)作殺生物劑，如三丁基錫 TBT。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(四)</span>依 MEPC.331(76)，2023/1/1 後新增禁用的物質為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>2023/1/1 起禁用含 Cybutryne（cybutryne/Irgarol）之防污系統。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">六</span>依高速船建造與入級規範建造之高速船，為何船級證書須有波高與船速之航行限制條件？（10 分）</div>
+<div class="a"><span class="lbl">答</span>高速船輕量化船體係依特定營運海域之最大有義波高與相對船速所對應之設計加速度與波浪/衝擊負荷設計；超出該波高—船速組合會使結構承受超過設計值之動態負荷，故證書須限制航行波高與船速以確保結構安全。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">七</span>何謂「現成船能源效率指數 EEXI」？何謂「碳強度指標 CII」？（20 分）</div>
+<div class="a"><span class="lbl">答</span>EEXI：技術性指標，以標準狀態下每噸海里 CO₂ 排放衡量設計能效，現成船須達 Required EEXI（常以主機功率限制 EPL 達成）。CII：營運性指標，衡量實際營運每載重噸·海里 CO₂ 排放，每年計算並評等 A–E，須逐年改善達標。</div></div>
+
+<!-- ============== PDF 2 輪機檢驗 ============== -->
+<h2 class="pdf" id="sec2">二、輪機檢驗（代號 10220）</h2>
+
+<h3 class="year">114 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>請說明大型船舶柴油主機之曲柄軸箱洩壓閥的檢驗要項為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>數量與排氣面積符合規範、動作壓力（≤0.2 bar）正確、閥盤與閥座密合、彈簧無腐蝕變形、火焰阻隔網完整清潔、開啟後自動回座防回火、排氣方向不傷人、防爆後油氣不外洩、安裝位置與固定確實。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>為滿足 SOLAS 規範，大型船舶舵機之設備要求與檢驗重點為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>須有主舵機與輔舵機；主舵機應於最深吃水、最大船速下 35°→30° 對舵 28 秒內完成，動力失效自動再起動，具雙重控制、過載保護、油位低警報。檢驗：液壓洩漏與壓力試驗、舵角範圍與時間、應急操舵、警報通訊、止檔緩衝。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>關於大型船用空氣壓縮機之檢驗，請敘述其檢驗要項。（20 分）</div>
+<div class="a"><span class="lbl">答</span>曲軸、軸承、活塞環、汽缸磨耗；各級安全閥動作壓力與排量；冷卻器與洩水閥；潤滑系統與壓力錶；起動空氣與排氣溫度；最終空氣含油量；曲軸箱通風與釋壓保護；管路防爆與水套防腐。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>惰氣系統為油輪之重要安全系統，進行該管路系統檢驗時應符合那些要求？（20 分）</div>
+<div class="a"><span class="lbl">答</span>洗滌塔、甲板水封（防回流貨艙）、止回閥；惰氣含氧量≤5%；壓力與含氧監測警報；維持正壓；PV 閥/真空釋放；甲板總管分配；自動關斷（含氧高、水封失效、壓力低）；防火防腐及紀錄。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>請說明大型柴油主機之調速器及超速保護裝置之檢驗重點為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>調速器：型式、靈敏度、轉速調定範圍與穩定度、負荷變動反應。超速保護（須獨立於調速器）：跳脫轉速設定（約額定 115%）、確實切斷燃油、復歸與警報。重點為兩者之獨立性及功能試驗。</div></div>
+
+<h3 class="year">113 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>壓艙水系統為可靠地完成壓載和卸載，此系統應滿足那些要求？（20 分）</div>
+<div class="a"><span class="lbl">答</span>各裝載狀態下可靠注排壓載；泵容量足、吸口防堵；管路與閥可遠端遙控；止回閥防舷外與艙間回流；防交叉污染；控制自由液面以保穩度；具測深與溢流保護；符合 BWM 公約壓載水處理要求。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>MARPOL 附則 V 防止船舶垃圾污染規則適用範圍為何？特殊區域內、外垃圾處理的規定分別為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>適用所有船舶各類垃圾，原則禁排塑膠。特殊區域外：食物殘渣經粉碎(≤25mm)距岸>3 浬可排、未粉碎>12 浬；貨物殘留物>12 浬。特殊區域內：僅粉碎食物殘渣距岸>12 浬可排，其餘須留船/岸上處理。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>請敘述船舶推進器於損傷進行整修時所應注意之事項。（20 分）</div>
+<div class="a"><span class="lbl">答</span>評估裂痕、彎曲、缺口之位置與範圍；高應力區（葉根、葉緣）裂痕須特別審慎；採認可銲補程序並預/後熱消除應力；矯正彎曲防再裂；修後做 PT、靜（必要動）平衡、葉面光潔；維持螺距與葉形對稱避免空化與振動。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>請敘述船舶推進軸產生龜裂的原因及其探傷的方法。（20 分）</div>
+<div class="a"><span class="lbl">答</span>原因：交變彎曲與扭轉疲勞、應力集中（鍵槽、軸肩、錐端）、海水腐蝕疲勞、過負荷振動、材料缺陷。探傷：磁粉(MT)檢表面/近表面裂、液滲(PT)、超音波(UT)檢內部；重點為錐端與鍵槽前緣，必要時拔軸檢查。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>那些管路、閥及配件之材料須施行材料試驗？經彎製熔接成管路系統後，外觀檢查應注意之事項為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>高溫高壓之 I/II 級管路（蒸汽、燃油、起動空氣、鍋爐給水等）之管、閥及配件須材料試驗。外觀檢查注意：彎管無裂紋皺褶與過度減薄、銲道無裂氣孔咬邊未熔合、尺寸對位、銲後熱處理、表面清潔、標誌可追溯。</div></div>
+
+<h3 class="year">112 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>何種國際航線現成船之船型及尺寸須計算 Attained EEXI 及 Required EEXI 以符合 MARPOL 附則 VI？（10 分）</div>
+<div class="a"><span class="lbl">答</span>2013 年前後既有之國際航線船舶，與 EEDI 適用船型相同：散裝船、油輪、化學品船、氣體船、LNG 船、貨櫃船、一般貨船、冷藏船、兼用船、客船、滾裝/車輛運輸船等，且≥400 GT 者。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>以 EPL 方式檢驗，驗船師執行船上文件查核及驗證時應注意事項為何？（10 分）</div>
+<div class="a"><span class="lbl">答</span>確認主機功率限制裝置之設定與封印、EPL 為 overridable/non-overridable、限制後最大功率與 EEXI 計算一致、Onboard Management Manual、功率/轉速監測紀錄、解除限制之程序與警報、技術檔案核准。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>船級協會對於船用鎳鋁青銅合金鑄件之推進器葉片銲補維修檢驗程序及試驗要求有何規定？（20 分）</div>
+<div class="a"><span class="lbl">答</span>依損傷區域分區（A 高應力葉根區嚴格/B/C），A 區限制或禁止銲補；銲補須經認可程序與合格銲工、相容銲材、預熱與層間溫度控制、必要消應力熱處理；修後做 PT、尺寸與平衡檢查，並提報損傷圖與程序經船級認可。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(一)</span>鍋爐及低溫壓力容器鋼板，對鋼材使用規格、兩者化學成分最大差異處及機械性質試驗有何要求？（10 分）</div>
+<div class="a"><span class="lbl">答</span>採銲接性良好之鍋爐/壓力容器鋼；低溫者降碳並要求規定低溫衝擊韌性；化學成分主要差異在 C、Mn 及合金（低溫鋼降 C 增 Ni）；機械試驗含拉伸、彎曲及常溫與規定低溫之衝擊試驗。</div></div>
+<div class="qa"><div class="q"><span class="lbl">三(二)</span>圓筒殼板上開橢圓型人孔有何規定？試按材料力學觀點說明理由。（10 分）</div>
+<div class="a"><span class="lbl">答</span>長軸應沿筒身縱向（與筒軸平行）、短軸沿圓周方向。理由：圓筒受內壓時環向應力為縱向之 2 倍；承受環向應力之截面為縱向板條，使孔在圓周方向之寬度（短軸）較小，可減少對高應力方向截面之削弱，降低應力集中。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四(一)</span>新船建造主推進軸系校中計算之目的為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>使各軸承負荷分配合理、避免過載或卸載，控制軸彎曲應力與主機/齒輪對中，防軸承過熱磨損及軸疲勞。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(二)</span>影響推進軸系排軸校中計算之一般因素為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>各軸承高低(offset)、軸徑與剛性、推進器懸臂重與水動力、船體（熱態/載況）變形、油膜厚度、齒輪箱與主機反力、艉軸管軸承斜率。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(三)</span>現場驗船師執行軸系安裝初看中檢驗之目的為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>安裝階段確認各軸承實際高低、間隙、接觸及頂舉(jack-up)負荷符合計算，確保冷態安裝正確，為後續對中基礎。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(四)</span>油潤滑白合金軸承及油潤滑之合成橡膠/樹脂/塑膠材料，靜負荷之規定壓力值為何？（5 分）</div>
+<div class="a"><span class="lbl">答</span>油潤滑白合金軸承一般≤0.8 MPa；油潤滑合成橡膠/加強樹脂/塑膠材料≤0.6 MPa。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五(一)</span>大型柴油機各氣缸曲柄軸箱容積在多少 m³ 以上須裝爆發洩壓閥？最大作動壓力不得高於多少？（5 分）</div>
+<div class="a"><span class="lbl">答</span>各缸曲柄軸箱容積≥0.6 m³ 者每缸至少裝一個爆發洩壓閥，最大作動壓力≤0.2 bar（≈0.02 MPa）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(二)</span>小型機各氣缸曲柄軸箱彼此連通者，如何決定最小排氣面積及最低裝設數目？（10 分）</div>
+<div class="a"><span class="lbl">答</span>以連通後總容積計算：洩壓閥總自由排氣面積≥每 m³ 曲柄箱容積 115 cm²，並依曲柄箱長度與缸數配置最低數目（連通者可酌減但不得過少）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(三)</span>若氣缸缸徑或曲柄軸箱容積在多少以下，可免裝爆發洩壓閥？（5 分）</div>
+<div class="a"><span class="lbl">答</span>氣缸缸徑≤200 mm 或曲柄軸箱容積<0.6 m³ 者可免裝。</div></div>
+
+<h3 class="year">111 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>請敘述超音波探傷之特點，並繪簡圖說明超音波脈衝反射法探傷原理。（20 分）</div>
+<div class="a"><span class="lbl">答</span>特點：穿透力強可測厚件、靈敏度高、可定位缺陷深度、單面可測、即時無輻射、設備輕便；但需耦合劑、對粗糙複雜形狀困難、需經驗判讀、有近表面盲區。脈衝反射法：探頭發射高頻脈衝入工件，遇缺陷或底面反射回探頭，依回波時間定深度、回波高度判大小（圖示始脈衝、缺陷波、底波）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>柴油機燃油系統中精密偶件包括那些零件？檢驗前須進行那些準備工作？（20 分）</div>
+<div class="a"><span class="lbl">答</span>三大精密偶件：噴油器針閥與閥體、噴油泵柱塞與套筒、出油閥與閥座。準備：停油降溫、洩壓、拆前清潔、用清潔柴油清洗、防污染碰傷、記錄原配對（不可互換）、備妥量具與試驗台、檢查霧化與密封。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>船舶泵之廠試與船上試驗的主要內容為何？請詳述之。（20 分）</div>
+<div class="a"><span class="lbl">答</span>廠試：性能試驗（流量—揚程曲線、效率、功率、轉速）、耐壓/密性試驗、超速、振動噪音、NPSH、過載及外觀。船上試驗：安裝後於實際系統運轉，確認排量揚程、吸排壓力、無洩漏異音過熱、各工況穩定、自吸起動、聯鎖與保護動作。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>船舶電器設備進行絕緣檢驗之時機、注意事項、檢驗內容及各裝置之合格條件為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>時機：新裝、檢修後、定期歲驗、受潮後。注意：先斷電放電、拆除電子敏感元件、記錄環境溫濕度、選適當電壓兆歐表。內容：對地及相間絕緣電阻量測。合格：一般≥1 MΩ（依電壓），高壓另依規範（如每 kV 1 MΩ+1）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>請敘述船舶貨艙蓋保養的主要目的，及歲檢時必須檢驗的項目。（20 分）</div>
+<div class="a"><span class="lbl">答</span>目的：維持風雨密、防海水進艙、保結構與貨物安全、防腐。歲檢：艙蓋板與骨材之腐蝕變形、橡膠密封墊狀態與壓縮量、鋼對鋼接觸、排水溝與止回閥、楔扣與夾持裝置、滾輪鏈條液壓系統、開閉動作及密性試驗（粉筆/水沖/超音波）。</div></div>
+
+<!-- ============== PDF 3 造船原理 ============== -->
+<h2 class="pdf" id="sec3">三、造船原理（代號 10230）★ 含計算式與圖</h2>
+
+<h3 class="year">114 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>箱型船 L=60m、B=10m、深 3m，於淡水（1000 kg/m³）以 2m 吃水平浮，傾斜試驗鉛直線長 6m；甲板上 15t 重塊橫移 6m，鉛錘下端水平移動 20cm。求該船重心高度。（20 分）</div>
+<div class="a"><span class="lbl">答</span>見下列計算，<b class="k">重心高度 KG ≈ 2.92 m</b>。</div>
+<div class="calc">
+<div class="ct">計算式</div>
+排水量 <span class="formula">W = L·B·d·ρ = 60×10×2×1000 = 1,200,000 kg = 1200 t</span><br>
+傾角 <span class="formula">tanθ = 偏移/擺長 = 0.20 / 6</span><br>
+定傾高 <span class="formula">GM = (w·d)/(W·tanθ) = (15×6)/(1200×0.20/6) = 90/40 = 2.25 m</span><br>
+浮心高 <span class="formula">KB = d/2 = 1.0 m</span><br>
+<span class="formula">BM = I/V = (L·B³/12)/V = (60×10³/12)/1200 = 5000/1200 = 4.167 m</span><br>
+<span class="formula">KM = KB + BM = 1.0 + 4.167 = 5.167 m</span><br>
+<b class="k">KG = KM − GM = 5.167 − 2.25 = 2.92 m</b>
+</div>
+<div class="fig">
+<svg width="300" height="180" viewBox="0 0 300 180">
+  <!-- waterline -->
+  <line x1="20" y1="70" x2="280" y2="70" stroke="#4a90d9" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="24" y="64" font-size="9" fill="#4a90d9">水線</text>
+  <!-- ship box section -->
+  <rect x="90" y="40" width="120" height="55" fill="#eef3f9" stroke="#0b3d6b" stroke-width="1.5"/>
+  <!-- keel -->
+  <line x1="90" y1="95" x2="210" y2="95" stroke="#333" stroke-width="2"/>
+  <text x="150" y="108" font-size="9" text-anchor="middle">K（龍骨）</text>
+  <!-- points -->
+  <circle cx="150" cy="70" r="2.5" fill="#1f7a4d"/><text x="156" y="68" font-size="9" fill="#1f7a4d">B (KB=1.0)</text>
+  <circle cx="150" cy="55" r="2.5" fill="#b00020"/><text x="156" y="52" font-size="9" fill="#b00020">G (KG≈2.92)</text>
+  <circle cx="150" cy="22" r="2.5" fill="#9a6b00"/><text x="156" y="22" font-size="9" fill="#9a6b00">M (KM=5.17)</text>
+  <line x1="150" y1="95" x2="150" y2="18" stroke="#999" stroke-dasharray="2,2"/>
+  <!-- GM bracket -->
+  <text x="222" y="40" font-size="9" fill="#9a6b00">GM=2.25</text>
+</svg>
+<div class="figcap">圖：KM = KB + BM，KG = KM − GM（K龍骨、B浮心、G重心、M定傾中心）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>排水量 10,000t 船平浮於 1024 kg/m³ 水中；雙重底艙長 25m、寬 15m，中央線水密隔艙壁分為左右二艙，內裝相對密度 0.84 油品。求未滿狀態時自由液面效應對 GM 之虛擬損失。（20 分）</div>
+<div class="a"><span class="lbl">答</span>見計算，<b class="k">GM 虛擬損失 ≈ 0.148 m（約 0.15 m）</b>。</div>
+<div class="calc">
+<div class="ct">計算式</div>
+每艙寬 b = 15/2 = 7.5 m（中央線分隔）<br>
+單艙自由液面慣性矩 <span class="formula">i = l·b³/12 = 25×7.5³/12 = 878.9 m⁴</span><br>
+二艙合計 <span class="formula">Σi = 2×878.9 = 1757.8 m⁴</span><br>
+艙內油密度 <span class="formula">ρ_油 = 0.84×1000 = 840 kg/m³</span><br>
+虛擬損失 <span class="formula">FSC = Σi·ρ_油 / Δ = 1757.8×840 / 10,000,000</span><br>
+<b class="k">FSC ≈ 0.148 m</b>（Δ=10,000 t 為船舶排水量質量）
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>箱型船 L=50m、重 600t 均布全長；機械設備 200t 均布於中間 1/4 長；首尾 1/4 長各有貨艙均布 140t。平浮於 1000 kg/m³ 水中。繪剪力與彎矩曲線並求最大值。（20 分）</div>
+<div class="a"><span class="lbl">答</span><b class="k">最大剪力 ±40 t</b>（x=18.75、31.25 m）；<b class="k">最大彎矩 125 t·m（hogging，x=12.5、37.5 m）</b>，舯部 −62.5 t·m（sagging）。</div>
+<div class="calc">
+<div class="ct">計算式</div>
+總重 W = 600+200+140+140 = 1080 t；浮力均布 b = 1080/50 = 21.6 t/m<br>
+各段重量強度：船體 600/50=12；機械 200/12.5=16；各貨艙 140/12.5=11.2 t/m<br>
+負荷強度 q（重−浮）：<br>
+&nbsp;&nbsp;0–12.5（船+貨）：12+11.2−21.6 = <b>+1.6</b>；&nbsp;12.5–18.75（純船）：12−21.6 = <b>−9.6</b><br>
+&nbsp;&nbsp;18.75–31.25（船+機）：12+16−21.6 = <b>+6.4</b>；&nbsp;31.25–37.5：<b>−9.6</b>；&nbsp;37.5–50：<b>+1.6</b><br>
+剪力 SF＝∫q：0 →+20(@12.5)→−40(@18.75)→+40(@31.25)→−20(@37.5)→0；<b class="k">|SF|max=40 t</b><br>
+彎矩 BM＝∫SF：0 →+125(@12.5)→+62.5(@18.75)→−62.5(@25)→+62.5(@31.25)→+125(@37.5)→0
+</div>
+<div class="fig">
+<svg width="560" height="430" viewBox="0 0 560 430">
+  <!-- ====== Load panel ====== -->
+  <text x="6" y="30" font-size="10" font-weight="bold" fill="#0b3d6b">負荷強度 q (t/m)</text>
+  <line x1="30" y1="75" x2="530" y2="75" stroke="#333" stroke-width="1"/>
+  <!-- load rects -->
+  <polygon points="30,75 155,75 155,68.6 30,68.6" fill="#cfe0f3" stroke="#0b3d6b" stroke-width="1"/>
+  <polygon points="155,75 217.5,75 217.5,113.4 155,113.4" fill="#f3d4d4" stroke="#0b3d6b" stroke-width="1"/>
+  <polygon points="217.5,75 342.5,75 342.5,49.4 217.5,49.4" fill="#cfe0f3" stroke="#0b3d6b" stroke-width="1"/>
+  <polygon points="342.5,75 405,75 405,113.4 342.5,113.4" fill="#f3d4d4" stroke="#0b3d6b" stroke-width="1"/>
+  <polygon points="405,75 530,75 530,68.6 405,68.6" fill="#cfe0f3" stroke="#0b3d6b" stroke-width="1"/>
+  <text x="78" y="64" font-size="8">+1.6</text><text x="170" y="125" font-size="8">−9.6</text>
+  <text x="270" y="45" font-size="8">+6.4</text><text x="360" y="125" font-size="8">−9.6</text><text x="455" y="64" font-size="8">+1.6</text>
+  <!-- ====== Shear panel ====== -->
+  <text x="6" y="160" font-size="10" font-weight="bold" fill="#0b3d6b">剪力 SF (t)</text>
+  <line x1="30" y1="210" x2="530" y2="210" stroke="#333" stroke-width="1"/>
+  <polyline points="30,210 155,180 217.5,270 280,210 342.5,150 405,240 530,210" fill="none" stroke="#1f7a4d" stroke-width="2"/>
+  <text x="120" y="175" font-size="8.5" fill="#1f7a4d">+20</text>
+  <text x="222" y="283" font-size="8.5" fill="#b00020">−40</text>
+  <text x="346" y="146" font-size="8.5" fill="#1f7a4d">+40</text>
+  <text x="408" y="252" font-size="8.5" fill="#b00020">−20</text>
+  <!-- ====== Bending panel ====== -->
+  <text x="6" y="305" font-size="10" font-weight="bold" fill="#0b3d6b">彎矩 BM (t·m)</text>
+  <line x1="30" y1="360" x2="530" y2="360" stroke="#333" stroke-width="1"/>
+  <path d="M30,360 Q92,316 155,297.5 Q186,310 217.5,328.75 Q248,372 280,391.25 Q311,372 342.5,328.75 Q374,310 405,297.5 Q467,316 530,360" fill="none" stroke="#9a6b00" stroke-width="2"/>
+  <text x="135" y="292" font-size="8.5" fill="#9a6b00">+125 (hog)</text>
+  <text x="385" y="292" font-size="8.5" fill="#9a6b00">+125 (hog)</text>
+  <text x="255" y="405" font-size="8.5" fill="#b00020">−62.5 (sag)</text>
+  <!-- x axis label -->
+  <text x="270" y="425" font-size="9" text-anchor="middle">船長 x（艏 0 → 艉 50 m），刻度：12.5 / 18.75 / 25 / 31.25 / 37.5</text>
+</svg>
+<div class="figcap">圖：負荷強度、剪力(SF)、彎矩(BM)曲線；最大剪力 ±40 t、最大彎矩 125 t·m(hogging)</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>油輪 L=300m，舯剖面對中性軸慣性矩 I<sub>NA</sub>=752 m⁴，中性軸距龍骨上方 9.30m、距上甲板 9.70m，舯剖面承受縱向彎矩 10,200 MNm（舯拱）。求龍骨及上甲板之彎曲應力，並標明拉或壓。（20 分）</div>
+<div class="a"><span class="lbl">答</span>龍骨 <b class="k">126.1 N/mm²（壓應力）</b>；上甲板 <b class="k">131.6 N/mm²（拉應力）</b>。</div>
+<div class="calc">
+<div class="ct">計算式（彎曲公式 σ = M·y / I）</div>
+龍骨 <span class="formula">σ_k = M·y_k/I = 10200×9.30/752 = 126.1 N/mm²</span><br>
+上甲板 <span class="formula">σ_d = M·y_d/I = 10200×9.70/752 = 131.6 N/mm²</span><br>
+舯拱（hogging）：中性軸以上受拉、以下受壓 → <b>甲板受拉、龍骨受壓</b>
+</div>
+<div class="fig">
+<svg width="420" height="200" viewBox="0 0 420 200">
+  <!-- section bar -->
+  <rect x="150" y="20" width="26" height="160" fill="#eef3f9" stroke="#0b3d6b" stroke-width="1.5"/>
+  <text x="163" y="15" font-size="9" text-anchor="middle">上甲板</text>
+  <text x="163" y="195" font-size="9" text-anchor="middle">龍骨</text>
+  <!-- neutral axis (9.30 above keel of 19.0 total => from bottom 0.489) -->
+  <line x1="120" y1="98" x2="300" y2="98" stroke="#333" stroke-dasharray="4,3"/>
+  <text x="304" y="101" font-size="9">中性軸 NA</text>
+  <!-- tension triangle (above NA, right side) -->
+  <polygon points="176,98 176,20 250,20" fill="#d8ece0" stroke="#1f7a4d" stroke-width="1.5"/>
+  <text x="252" y="30" font-size="9" fill="#1f7a4d">拉 131.6</text>
+  <text x="220" y="60" font-size="8.5" fill="#1f7a4d">(甲板)</text>
+  <!-- compression triangle (below NA, left side) -->
+  <polygon points="150,98 150,180 78,180" fill="#f3dede" stroke="#b00020" stroke-width="1.5"/>
+  <text x="40" y="176" font-size="9" fill="#b00020">壓 126.1</text>
+  <text x="95" y="140" font-size="8.5" fill="#b00020">(龍骨)</text>
+  <text x="320" y="150" font-size="9">σ = M·y/I</text>
+</svg>
+<div class="figcap">圖：舯拱時剖面彎曲應力分布（中性軸上拉、下壓，線性變化）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五(一)</span>螺槳單獨試驗：為何模型與實船螺槳僅以滿足前進係數相等，而不要求雷諾數也相等？（10 分）</div>
+<div class="a"><span class="lbl">答</span>螺槳水動力主要由慣性力支配，KT、KQ 主要為前進係數 J（運動相似）之函數；Re 影響的是黏性摩擦，於高 Re 下相對小，且模型與實船無法同時滿足 J 與 Re（尺度效應），故以 J 為主相似準則。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(二)</span>對模型與實船雷諾數不同引起之水動力性能差異，如何修正？（10 分）</div>
+<div class="a"><span class="lbl">答</span>模型 Re 低、摩擦阻力相對大，使 KT 偏低、KQ 偏高、效率偏低；依 ITTC 尺度效應修正法，按葉切面阻力係數隨 Re 之變化，對 KT、KQ 作摩擦修正換算至實船 Re。</div>
+<div class="fig">
+<svg width="340" height="220" viewBox="0 0 340 220">
+  <line x1="40" y1="180" x2="320" y2="180" stroke="#333"/><line x1="40" y1="180" x2="40" y2="20" stroke="#333"/>
+  <text x="322" y="184" font-size="9" text-anchor="end">J＝Va/(nD)</text>
+  <!-- KT decreasing -->
+  <path d="M40,60 Q160,90 290,178" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="46" y="56" font-size="9" fill="#0b3d6b">K_T</text>
+  <!-- 10KQ decreasing -->
+  <path d="M40,95 Q170,120 300,178" fill="none" stroke="#9a6b00" stroke-width="2"/>
+  <text x="46" y="108" font-size="9" fill="#9a6b00">10·K_Q</text>
+  <!-- efficiency rise then fall -->
+  <path d="M40,180 Q170,40 240,70 Q270,82 300,178" fill="none" stroke="#1f7a4d" stroke-width="2"/>
+  <text x="170" y="42" font-size="9" fill="#1f7a4d">η₀</text>
+</svg>
+<div class="figcap">圖：螺槳開水特性曲線 K_T、10K_Q、η₀ 對前進係數 J</div>
+</div></div>
+
+<h3 class="year">113 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>如何以統計方式評估破損穩度以及其缺點。（15 分）</div>
+<div class="a"><span class="lbl">答</span>採概率破損穩度（如 SOLAS B-1 之達成細分指數 A 與要求指數 R），依海損統計各破損位置、範圍、機率計算各情況生存機率加權求 A，A≥R 即合格。缺點：依賴歷史統計、假設與實際有差、無法涵蓋所有破損、計算繁複、對新型船代表性不足。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>斜坡式橫向下水優於縱向下水的主要原因。（10 分）</div>
+<div class="a"><span class="lbl">答</span>所需下水滑道短、適河岸狹窄或水深不足處；避免縱向下水之艏驟降大縱向力；設備滑道較簡單；適較小船快速下水。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二(一)</span>總噸位及其用途。（10 分）</div>
+<div class="a"><span class="lbl">答</span>GT 為船舶所有圍蔽空間總容積之無因次量度，代表船舶整體大小。用途：法規適用門檻、檢驗、證書、規費港埠費、船員配額等之依據。</div></div>
+<div class="qa"><div class="q"><span class="lbl">二(二)</span>根據 1969 年國際船舶噸位丈量公約，如何以公式計算總噸位。（10 分）</div>
+<div class="a"><span class="lbl">答</span><span class="formula">GT = K₁·V</span>，V 為全船圍蔽空間總容積(m³)，<span class="formula">K₁ = 0.2 + 0.02·log₁₀V</span>。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(一)</span>靜穩度的意義及求得靜穩度角的條件。（10 分）</div>
+<div class="a"><span class="lbl">答</span>靜穩度為船受外傾後產生回復力矩抵抗傾斜之能力，以扶正力臂 GZ 表示。求平衡傾角條件：傾側力矩=回復力矩（兩曲線交點），且回復力矩斜率為正（穩定平衡）。</div></div>
+<div class="qa"><div class="q"><span class="lbl">三(二)</span>少量貨物裝卸時，如何使用靜水性能曲線決定船舶最終吃水。（10 分）</div>
+<div class="a"><span class="lbl">答</span>少量重量變化視為平行升降，由排水量變化對應靜水力曲線查新平均吃水（<span class="formula">Δd = w/TPC</span>）；再以 LCB/LCF 與重量縱向位置修正俯仰，得最終首尾吃水。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四(一)</span>船級協會鋼船規範中船舶縱向強度、橫向強度、局部強度計算的差異性。（10 分）</div>
+<div class="a"><span class="lbl">答</span>縱向強度：視船為箱樑，算總縱向彎矩（靜水+波浪）、剪力與剖面模數。橫向強度：分析肋骨、肋板、橫樑構成之橫向框架受側壓與貨載之應力變形。局部強度：個別板與扶強材受局部水壓/貨載/集中力之強度。三者範圍與分析尺度不同。</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(二)</span>船舶運動穩定性的種類與意義。（10 分）</div>
+<div class="a"><span class="lbl">答</span>含直線（straight-line）、位置（positional）、航向（course）穩定性。意義：船受擾動後能否維持原運動狀態；穩定者自行回復、不穩定者偏離擴大，影響操縱與舵需求。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五(一)</span>螺槳葉片空化現象的主要種類及防止航行中發生空化的方法。（10 分）</div>
+<div class="a"><span class="lbl">答</span>種類：片狀(sheet)、泡狀(bubble)、雲狀(cloud)、葉梢渦(tip vortex)、葉根、轂渦空化。防止：降低葉負荷（增葉面積比/葉數）、適當螺距與葉剖面、降轉速、改善伴流均勻度、控制浸沒深度。</div></div>
+<div class="qa"><div class="q"><span class="lbl">五(二)</span>容易導致葉片侵蝕的空化現象種類。（5 分）</div>
+<div class="a"><span class="lbl">答</span>潰滅於葉面之雲狀空化與片狀空化尾端潰滅（cloud/sheet collapse）最易造成葉面剝蝕(erosion)。</div></div>
+
+<h3 class="year">112 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>船舶之 Hogging 和 Sagging 現象及其發生原因。（10 分）</div>
+<div class="a"><span class="lbl">答</span>Hogging（舯拱）：舯部浮力>重量，船舯上拱，甲板受拉、龍骨受壓。Sagging（舯垂）：舯部重量>浮力，船舯下垂，甲板受壓、龍骨受拉。成因：重量與浮力沿船長分布不均，及波浪（波峰在舯→hog；波峰在首尾→sag）。</div>
+<div class="fig">
+<svg width="440" height="170" viewBox="0 0 440 170">
+  <!-- Hogging -->
+  <text x="100" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">Hogging（舯拱）</text>
+  <path d="M20,70 Q110,30 200,70" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <path d="M20,90 Q110,50 200,90" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="95" y="44" font-size="8" fill="#1f7a4d">甲板受拉</text>
+  <text x="95" y="86" font-size="8" fill="#b00020">龍骨受壓</text>
+  <path d="M70,118 l0,-14 m-4,4 l4,-4 l4,4" stroke="#4a90d9" fill="none"/>
+  <text x="60" y="135" font-size="8" fill="#4a90d9">波峰在舯</text>
+  <!-- Sagging -->
+  <text x="300" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">Sagging（舯垂）</text>
+  <path d="M240,50 Q330,90 420,50" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <path d="M240,70 Q330,110 420,70" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="312" y="44" font-size="8" fill="#b00020">甲板受壓</text>
+  <text x="312" y="125" font-size="8" fill="#1f7a4d">龍骨受拉</text>
+  <text x="300" y="150" font-size="8" fill="#4a90d9">波峰在首尾</text>
+</svg>
+<div class="figcap">圖：Hogging（甲板受拉、龍骨受壓）與 Sagging（甲板受壓、龍骨受拉）</div>
+</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>龐琴曲線（Bonjean curves）的內容及其意義。（10 分）</div>
+<div class="a"><span class="lbl">答</span>表示各橫剖面在不同吃水下之浸水剖面面積（及對基線之矩）之曲線。意義：用以求任意水線（含波浪/傾斜水線）下之排水量、浮心位置與浮力分布，供靜水力與縱向強度計算。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(三)</span>乾舷（Freeboard）的定義及影響乾舷訂定之因素。（10 分）</div>
+<div class="a"><span class="lbl">答</span>乾舷為船舯舷側自夏季載重水線量至乾舷甲板上緣之垂直距離，代表儲備浮力。影響因素：船長、方塊係數、上層建築長度、舷弧、梁拱、開口封閉、船種(A/B 型)、強度。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(四)</span>船舶由固定台縱向下水，「艏驟降」及「艉驟降」發生的原因。（10 分）</div>
+<div class="a"><span class="lbl">答</span>船尾先入水。艉驟降：艉端浮力尚不足而下沉。艏驟降：當艉浮力使船繞滑道末端轉動、艏端離台瞬間支點集中於艏端，因浮力尚未支撐全船重量而驟降。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>傾斜試驗之目的為何？輕載排水量 8000t，正平浮；甲板 25t 重物橫移 15m，長 4m 鉛錘線產生 20cm 橫移，KM=7m。求 GM 與 KG。（20 分）</div>
+<div class="a"><span class="lbl">答</span>目的：測定空船重心位置(KG)與排水量，作為穩度計算基準。<b class="k">GM = 0.9375 m，KG = 6.0625 m</b>。</div>
+<div class="calc">
+<div class="ct">計算式</div>
+傾角 <span class="formula">tanθ = 0.20/4 = 0.05</span><br>
+<span class="formula">GM = (w·d)/(W·tanθ) = (25×15)/(8000×0.05) = 375/400 = 0.9375 m</span><br>
+<b class="k">KG = KM − GM = 7 − 0.9375 = 6.0625 m</b>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>已知 DHP、THP、EHP，準推進效率 η_D=(EHP/THP)(THP/DHP)；試說明如何由船模阻力試驗、單獨螺槳試驗、船模自推試驗求得實船 DHP。（20 分）</div>
+<div class="a"><span class="lbl">答</span>由船模阻力試驗（經摩擦阻力尺度修正）得實船 EHP；由單獨螺槳試驗得開水效率 η₀、KT、KQ；由自推試驗得推力減額 t、伴流分率 w 及相對旋轉效率 η_R，得船身效率 <span class="formula">η_H=(1−t)/(1−w)</span>。<span class="formula">η_D=η₀·η_H·η_R</span>；<b class="k">DHP = EHP/η_D</b>。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>破損穩度中「損失浮力法」與「增加重量法」之主要差異？何者須考慮自由液面效應？原因及對穩度之影響為何？（20 分）</div>
+<div class="a"><span class="lbl">答</span>損失浮力法：破艙視為船體喪失該部分浮力，排水量與重心不變。增加重量法：破艙視為進水增重，排水量與重心改變。<b class="k">增加重量法須計自由液面效應</b>（進水有自由液面降低 GM）；損失浮力法因該艙不計入船體浮力故不計。增重法計入自由液面使 GM 減小、結果較保守。</div></div>
+
+<h3 class="year">111 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一(一)</span>請說明船舶浮心的意義。（5 分）</div>
+<div class="a"><span class="lbl">答</span>浮心 B 為水下排開水體積之幾何形心，即浮力作用點。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(二)</span>船舶浮心縱向位置對阻力的影響。（10 分）</div>
+<div class="a"><span class="lbl">答</span>LCB 過前使艏豐滿、興波阻力增；過後使艉部水流分離、黏壓阻力增。存在最佳 LCB（隨 Fn 變）使總阻力最小。</div></div>
+<div class="qa"><div class="q"><span class="lbl">一(三)</span>船舶浮心縱向位置對推進效率的影響。（10 分）</div>
+<div class="a"><span class="lbl">答</span>LCB 過偏使伴流不均、推力減額增、螺槳易空化，降低船身與推進效率；適當 LCB 使艉部流場均勻，提高 η_H 與 η₀。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二(一)</span>請說明什麼是 open water test。（15 分）</div>
+<div class="a"><span class="lbl">答</span>於拖航水槽中將螺槳單獨（無船體）以螺槳動力計拖行，在均勻來流下量測不同前進係數 J 之推力 T 與扭矩 Q，求 KT、KQ、η₀ 特性曲線。</div></div>
+<div class="qa"><div class="q"><span class="lbl">二(二)</span>請說明 open water test 的目的。（10 分）</div>
+<div class="a"><span class="lbl">答</span>取得螺槳在均勻流之水動力性能（KT-KQ-J 曲線、開水效率），供螺槳設計選用、自推試驗分析（求推力減額、伴流、相對旋轉效率）及預估實船馬力。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三(一)</span>迴轉試驗、螺旋試驗與 Z 形操縱試驗如何進行？（15 分）</div>
+<div class="a"><span class="lbl">答</span>迴轉試驗：定速打滿舵(35°)保持，量戰術直徑、進距、橫距。螺旋試驗(Dieudonné)：舵角由一側逐步變至另側再反向，記錄穩定迴轉角速度判航向穩定性（遲滯環）。Z 形試驗：舵打 10°，待船首偏轉 10° 即反舵重複，量超越角與反應時間。</div></div>
+<div class="qa"><div class="q"><span class="lbl">三(二)</span>上述三種試驗的目的分別為何？（10 分）</div>
+<div class="a"><span class="lbl">答</span>迴轉試驗評估迴旋能力與半徑；螺旋試驗判航向（動態）穩定性及不穩定環大小；Z 形試驗評估航向保持與舵反應（初始迴轉能力與超越角）。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四(一)</span>船舶貨物垂向移動時對初穩度有何影響？請作圖並說明。（15 分）</div>
+<div class="a"><span class="lbl">答</span>重量上移使重心 G 上升，<span class="formula">GM=KM−KG</span> 減小，初穩度（GZ=GM·sinθ）下降，搖擺週期變長；下移則 GM 增大。（圖示 G→G₁ 上升、GM 減小，GZ 曲線初始斜率變小）</div></div>
+<div class="qa"><div class="q"><span class="lbl">四(二)</span>船舶貨物橫向移動時對大傾角穩度有何影響？請作圖並說明。（10 分）</div>
+<div class="a"><span class="lbl">答</span>貨物橫移使 G 移至 G₁（<span class="formula">GG₁=w·d/W</span>），產生固定傾側力臂，靜穩度曲線整體下移（<span class="formula">GZ′=GZ−GG₁·cosθ</span>），初始即有橫傾角，最大 GZ、穩度範圍與消失角均減小。</div>
+<div class="fig">
+<svg width="380" height="220" viewBox="0 0 380 220">
+  <line x1="40" y1="180" x2="360" y2="180" stroke="#333"/><line x1="40" y1="180" x2="40" y2="20" stroke="#333"/>
+  <text x="362" y="184" font-size="9" text-anchor="end">傾角 θ</text>
+  <text x="46" y="18" font-size="9">GZ</text>
+  <!-- original GZ curve -->
+  <path d="M40,180 Q140,40 230,70 Q290,90 330,160" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="150" y="50" font-size="9" fill="#0b3d6b">原 GZ 曲線</text>
+  <!-- shifted-down curve (transverse shift): GZ - GG1*cosθ -->
+  <path d="M40,150 Q140,55 225,88 Q280,108 312,170" fill="none" stroke="#b00020" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="120" y="125" font-size="9" fill="#b00020">橫移後 GZ′=GZ−GG₁cosθ</text>
+  <!-- initial heel marker -->
+  <circle cx="58" cy="180" r="3" fill="#b00020"/>
+  <text x="50" y="198" font-size="8" fill="#b00020">初始橫傾角</text>
+  <text x="250" y="205" font-size="8" fill="#666">虛線：最大GZ↓、範圍↓、消失角↓</text>
+</svg>
+<div class="figcap">圖：貨物橫移使 GZ 曲線下移（餘弦修正），產生初始橫傾並降低穩度</div>
+</div></div>
+
+<!-- ============== PDF 4 輪機工程 ============== -->
+<h2 class="pdf" id="sec4">四、輪機工程（代號 10240）★ 含圖</h2>
+
+<h3 class="year">114 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>請說明二行程與四行程柴油機的主要差異，並比較其在船舶動力系統中的優缺點。（20 分）</div>
+<div class="a"><span class="lbl">答</span>二行程曲軸每轉做功一次、需掃氣、（多）無進排氣閥；四行程兩轉做功一次、有完整進排氣閥。二行程：功率密度高、構造簡單、適低速大型主機、可燒劣質油，但掃氣損失、油耗排放較差。四行程：熱效率高、油耗低、適中高速輔機，但構造複雜、功率密度低。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>請解釋水管鍋爐與火管鍋爐的結構與運行原理，並比較其優缺點及應用範圍。（20 分）</div>
+<div class="a"><span class="lbl">答</span>水管：水在管內、煙在管外，由汽鼓水鼓與水管構成，循環快、可高壓大容量、起汽快、破裂影響小，但結構複雜、水質要求嚴，用於主推進大型。火管：煙在管內、水在殼內，構造簡單、水容量大、耐負荷波動，但壓力容量受限、起汽慢、破裂危險大，用於輔助/廢氣鍋爐。</div>
+<div class="fig">
+<svg width="420" height="160" viewBox="0 0 420 160">
+  <!-- water tube -->
+  <text x="50" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">水管鍋爐</text>
+  <circle cx="90" cy="40" r="16" fill="#cfe0f3" stroke="#0b3d6b"/><text x="90" y="44" font-size="7" text-anchor="middle">汽鼓</text>
+  <circle cx="60" cy="120" r="13" fill="#cfe0f3" stroke="#0b3d6b"/><circle cx="120" cy="120" r="13" fill="#cfe0f3" stroke="#0b3d6b"/>
+  <text x="90" y="138" font-size="7" text-anchor="middle">水鼓</text>
+  <line x1="80" y1="54" x2="58" y2="108" stroke="#0b3d6b"/><line x1="100" y1="54" x2="122" y2="108" stroke="#0b3d6b"/>
+  <line x1="90" y1="56" x2="90" y2="107" stroke="#0b3d6b"/>
+  <text x="135" y="85" font-size="7" fill="#b00020">水在管內</text>
+  <!-- fire tube -->
+  <text x="280" y="16" font-size="10" font-weight="bold" fill="#0b3d6b">火管鍋爐</text>
+  <rect x="250" y="35" width="130" height="90" rx="12" fill="#f3d4d4" stroke="#0b3d6b"/>
+  <line x1="258" y1="60" x2="372" y2="60" stroke="#b00020"/><line x1="258" y1="80" x2="372" y2="80" stroke="#b00020"/><line x1="258" y1="100" x2="372" y2="100" stroke="#b00020"/>
+  <text x="315" y="30" font-size="7" text-anchor="middle">水在殼內</text>
+  <text x="388" y="64" font-size="7" fill="#b00020">煙</text>
+</svg>
+<div class="figcap">圖：水管鍋爐（水在管內、汽鼓+水鼓）vs 火管鍋爐（煙在管內、水在殼內）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>請說明壓縮式冷凍循環的四個主要階段及運作原理，並繪出相對應之壓力(P)-焓(h)圖。（20 分）</div>
+<div class="a"><span class="lbl">答</span>①壓縮：壓縮機將低壓蒸氣等熵壓縮為高壓高溫過熱氣；②冷凝：冷凝器定壓放熱冷凝為液；③膨脹：經膨脹閥等焓節流降壓降溫；④蒸發：蒸發器定壓吸熱汽化。P-h 圖呈順時針矩形（右上斜壓縮、上方冷凝、左側垂直節流、下方蒸發）。</div>
+<div class="fig">
+<svg width="360" height="230" viewBox="0 0 360 230">
+  <line x1="45" y1="195" x2="340" y2="195" stroke="#333"/><line x1="45" y1="195" x2="45" y2="20" stroke="#333"/>
+  <text x="342" y="199" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">壓力 P</text>
+  <!-- saturation dome -->
+  <path d="M120,185 Q150,55 200,50 Q255,55 290,185" fill="none" stroke="#bbb" stroke-width="1.5"/>
+  <text x="150" y="95" font-size="8" fill="#999">飽和線</text>
+  <!-- cycle: 1(evap out, right of dome bottom) 2(compressed, top right) 3(cond out, top left liquid) 4(after throttle) -->
+  <!-- points: 1=(250,150) 2=(300,80) 3=(110,80) 4=(110,150) -->
+  <line x1="250" y1="150" x2="300" y2="80" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="300" y1="80" x2="110" y2="80" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="110" y1="80" x2="110" y2="150" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="110" y1="150" x2="250" y2="150" stroke="#0b3d6b" stroke-width="2"/>
+  <circle cx="250" cy="150" r="3" fill="#b00020"/><text x="248" y="166" font-size="8">1 蒸發出</text>
+  <circle cx="300" cy="80" r="3" fill="#b00020"/><text x="296" y="74" font-size="8">2 壓縮後</text>
+  <circle cx="110" cy="80" r="3" fill="#b00020"/><text x="70" y="74" font-size="8">3 冷凝出</text>
+  <circle cx="110" cy="150" r="3" fill="#b00020"/><text x="70" y="166" font-size="8">4 節流後</text>
+  <text x="305" y="120" font-size="8" fill="#0b3d6b">①壓縮</text>
+  <text x="170" y="74" font-size="8" fill="#0b3d6b">②冷凝</text>
+  <text x="60" y="118" font-size="8" fill="#0b3d6b">③節流</text>
+  <text x="160" y="164" font-size="8" fill="#0b3d6b">④蒸發</text>
+</svg>
+<div class="figcap">圖：壓縮式冷凍循環 P-h 圖（1→2 壓縮、2→3 冷凝、3→4 節流、4→1 蒸發）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>請分析船舶通風系統的作用，並說明影響通風效率的主要因素。（20 分）</div>
+<div class="a"><span class="lbl">答</span>作用：供新鮮空氣、排廢熱油氣與有害氣體、維持溫濕度與含氧、供燃燒空氣、防爆性氣體積聚。影響因素：風機型式與風量風壓、風管布置與阻力（長度彎頭）、進排氣口位置、機艙熱負荷、氣密與洩漏、濾網阻塞、自然與機械通風配合、外界溫濕度。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>請說明柴油機過熱的主要原因及其預防措施。（20 分）</div>
+<div class="a"><span class="lbl">答</span>原因：冷卻水不足/流量低/水垢阻塞、潤滑不良、燃燒不良（噴油過量、正時不對、過負荷）、掃氣不足、結垢積碳、海水冷卻器髒污。預防：維持冷卻水量與清潔、定期除垢、確保潤滑、正確噴油正時與負荷、清潔冷卻器、監測各缸排溫與水溫警報、避免長期超負荷。</div></div>
+
+<h3 class="year">113 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>柴油機工作循環一般簡化為那幾種循環來探討，試分別繪圖說明之。（20 分）</div>
+<div class="a"><span class="lbl">答</span>簡化為三種理想循環：①等容(Otto)—定容加熱；②等壓(Diesel)—定壓加熱（適低速柴油機）；③複合/雙重(Sabathé/Dual)—先定容後定壓加熱，最接近實際高速柴油機。各以 P-V 圖示壓縮、加熱、膨脹、放熱過程。</div>
+<div class="fig">
+<svg width="480" height="180" viewBox="0 0 480 180">
+  <!-- Otto -->
+  <text x="40" y="16" font-size="9" font-weight="bold" fill="#0b3d6b">等容(Otto)</text>
+  <line x1="30" y1="150" x2="150" y2="150" stroke="#333"/><line x1="30" y1="150" x2="30" y2="25" stroke="#333"/>
+  <path d="M50,140 Q70,90 120,55 L120,30 Q90,55 50,90 L50,140" fill="none" stroke="#0b3d6b" stroke-width="1.6"/>
+  <line x1="120" y1="30" x2="120" y2="55" stroke="#b00020" stroke-width="1.6"/>
+  <text x="55" y="172" font-size="8">定容加熱</text>
+  <!-- Diesel -->
+  <text x="190" y="16" font-size="9" font-weight="bold" fill="#0b3d6b">等壓(Diesel)</text>
+  <line x1="180" y1="150" x2="300" y2="150" stroke="#333"/><line x1="180" y1="150" x2="180" y2="25" stroke="#333"/>
+  <path d="M200,140 Q220,90 265,55 L290,55 Q250,80 200,120 L200,140" fill="none" stroke="#0b3d6b" stroke-width="1.6"/>
+  <line x1="265" y1="55" x2="290" y2="55" stroke="#b00020" stroke-width="1.6"/>
+  <text x="205" y="172" font-size="8">定壓加熱</text>
+  <!-- Dual -->
+  <text x="340" y="16" font-size="9" font-weight="bold" fill="#0b3d6b">複合(Dual)</text>
+  <line x1="330" y1="150" x2="460" y2="150" stroke="#333"/><line x1="330" y1="150" x2="330" y2="25" stroke="#333"/>
+  <path d="M350,140 Q370,95 415,60 L415,42 L440,42 Q400,70 350,118 L350,140" fill="none" stroke="#0b3d6b" stroke-width="1.6"/>
+  <line x1="415" y1="60" x2="415" y2="42" stroke="#b00020" stroke-width="1.6"/>
+  <line x1="415" y1="42" x2="440" y2="42" stroke="#b00020" stroke-width="1.6"/>
+  <text x="355" y="172" font-size="8">定容+定壓</text>
+</svg>
+<div class="figcap">圖：柴油機三種理想循環之 P-V 圖（紅線為加熱過程）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>鍋爐中水垢生成的原因為何？水垢大致分為那幾類？爐水造成鍋爐腐蝕的主要原因？（20 分）</div>
+<div class="a"><span class="lbl">答</span>成因：爐水中鈣鎂硬度鹽及矽酸鹽受熱分解、溶解度下降而沉積於受熱面。分類：碳酸鹽垢、硫酸鹽垢、矽酸鹽垢（及氫氧化物/油泥垢）。腐蝕原因：溶氧之氧腐蝕（點蝕）、低 pH 酸蝕、鹽類濃縮鹼脆、氯離子、電化學腐蝕、給水含 CO₂。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>試繪圖說明噴射泵的工作原理，並述明其性能特性。（20 分）</div>
+<div class="a"><span class="lbl">答</span>原理：高壓工作流體經噴嘴將壓力能轉為高速動能，於混合室產生低壓抽吸被輸送流體，混合後經擴散管將動能回升為壓力能排出，無運動件。特性：構造簡單可靠、可抽含氣含雜質流體、自吸；但效率低、需高壓工作流體、性能受背壓與面積比影響。</div>
+<div class="fig">
+<svg width="400" height="140" viewBox="0 0 400 140">
+  <!-- driving fluid inlet -->
+  <rect x="20" y="55" width="70" height="30" fill="#cfe0f3" stroke="#0b3d6b"/>
+  <text x="55" y="48" font-size="8" text-anchor="middle">高壓工作流體</text>
+  <!-- nozzle -->
+  <polygon points="90,55 130,65 130,75 90,85" fill="#9ec5e8" stroke="#0b3d6b"/>
+  <text x="110" y="100" font-size="7" text-anchor="middle">噴嘴</text>
+  <!-- mixing chamber -->
+  <rect x="130" y="58" width="70" height="24" fill="#f3f0e0" stroke="#0b3d6b"/>
+  <text x="165" y="50" font-size="7" text-anchor="middle">混合室(低壓)</text>
+  <!-- suction inlet -->
+  <line x1="155" y1="110" x2="155" y2="82" stroke="#1f7a4d" stroke-width="2"/>
+  <text x="160" y="122" font-size="7" fill="#1f7a4d">被吸入流體</text>
+  <!-- diffuser -->
+  <polygon points="200,58 280,48 280,92 200,82" fill="#9ec5e8" stroke="#0b3d6b"/>
+  <text x="240" y="105" font-size="7" text-anchor="middle">擴散管(升壓)</text>
+  <!-- outlet -->
+  <line x1="280" y1="70" x2="340" y2="70" stroke="#0b3d6b" stroke-width="2"/>
+  <polygon points="340,70 332,66 332,74" fill="#0b3d6b"/>
+  <text x="320" y="62" font-size="7">排出</text>
+</svg>
+<div class="figcap">圖：噴射泵工作原理（噴嘴→混合室低壓抽吸→擴散管升壓排出，無運動件）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>試繪出標準冷凍循環之壓力-焓示意圖，並以此圖表示出冷凍性能係數 COP 的定義及計算式。（20 分）</div>
+<div class="a"><span class="lbl">答</span>繪矩形循環（壓縮 1→2、冷凝 2→3、節流 3→4、蒸發 4→1）。<span class="formula">COP = 制冷量/壓縮功 = (h₁−h₄)/(h₂−h₁)</span>，即蒸發器吸熱量與壓縮機耗功之比。</div>
+<div class="fig">
+<svg width="360" height="210" viewBox="0 0 360 210">
+  <line x1="45" y1="180" x2="340" y2="180" stroke="#333"/><line x1="45" y1="180" x2="45" y2="20" stroke="#333"/>
+  <text x="342" y="184" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">P</text>
+  <path d="M120,170 Q150,50 200,45 Q255,50 290,170" fill="none" stroke="#bbb" stroke-width="1.5"/>
+  <line x1="250" y1="135" x2="300" y2="70" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="300" y1="70" x2="110" y2="70" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="110" y1="70" x2="110" y2="135" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="110" y1="135" x2="250" y2="135" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="246" y="150" font-size="8">1</text><text x="303" y="68" font-size="8">2</text>
+  <text x="100" y="66" font-size="8">3</text><text x="100" y="150" font-size="8">4</text>
+  <!-- q_L bracket bottom -->
+  <line x1="110" y1="195" x2="250" y2="195" stroke="#1f7a4d"/>
+  <text x="150" y="206" font-size="8" fill="#1f7a4d">q_L=h₁−h₄（制冷量）</text>
+  <text x="250" y="40" font-size="8" fill="#b00020">w=h₂−h₁（壓縮功）</text>
+  <text x="120" y="35" font-size="9" fill="#9a6b00">COP = (h₁−h₄)/(h₂−h₁)</text>
+</svg>
+<div class="figcap">圖：標準冷凍循環 P-h 圖與 COP 定義</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>1973 年通過之綜合性防污公約（中英文）？六附則最早與最晚生效者？引擎排氣最新要求？（20 分）</div>
+<div class="a"><span class="lbl">答</span>MARPOL 73/78《國際防止船舶污染公約》(International Convention for the Prevention of Pollution from Ships)。最早生效：Annex I（油）與 II（散裝有毒液體），1983 年；最晚：Annex VI（空氣污染），2005 年。最新要求：NOx Tier III（ECA 內）、燃油硫含量全球≤0.50%、ECA 內≤0.10%，及 EEDI/EEXI/CII 溫室氣體減排。</div></div>
+
+<h3 class="year">112 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>請說明船舶柴油主機排氣污染中氮氧化物之減量技術。（20 分）</div>
+<div class="a"><span class="lbl">答</span>機內：降低燃燒溫度與峰壓（延遲噴射、米勒循環、提高增壓、降壓縮比）、廢氣再循環(EGR)、進氣加濕/燃油乳化、共軌精準噴油正時。機外（後處理）：選擇性觸媒還原(SCR，以尿素將 NOx 還原為 N₂)。可達 IMO NOx Tier II/III。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>請說明三鼓式自然循環水管鍋爐主要構件之功能，及此類鍋爐產汽最大量之限制。（20 分）</div>
+<div class="a"><span class="lbl">答</span>構件：上汽鼓（汽水分離蓄汽）、二下水鼓（集水沉渣）、上升管（受熱汽水上升）、下降管（冷水下降形成自然循環）、過熱器、節熱器、空氣預熱器。產汽限制：受自然循環推動力（汽水密度差）限制，循環倍率、汽鼓分離能力與受熱面允許熱負荷決定最大產汽量；壓力越高密度差越小循環越弱。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>請於 P-h 圖中繪製附圖雙級壓縮閃激室冷凍機之熱力循環，並說明閃激室對 COP 之影響。（20 分）</div>
+<div class="a"><span class="lbl">答</span>閃激室將節流後汽液分離，飽和蒸氣抽至高壓壓縮機入口（中間補氣冷卻），飽和液再節流入蒸發器。影響：移除閃發蒸氣並作中間冷卻，降低高壓級吸氣過熱、減少壓縮功並增大製冷量，<b class="k">提高 COP</b>。</div>
+<div class="fig">
+<svg width="370" height="215" viewBox="0 0 370 215">
+  <line x1="45" y1="185" x2="350" y2="185" stroke="#333"/><line x1="45" y1="185" x2="45" y2="20" stroke="#333"/>
+  <text x="352" y="189" font-size="9" text-anchor="end">焓 h</text><text x="20" y="30" font-size="9">P</text>
+  <path d="M115,175 Q150,45 205,40 Q260,45 300,175" fill="none" stroke="#bbb" stroke-width="1.5"/>
+  <!-- two-stage: low stage 1->2 (mid P), mix, high stage ->3, cond, flash split -->
+  <!-- low evap 1(240,150) -> 2 mid(280,108) ; high 5 mid sat vap(150,108)->6(300,62); cond 6->7(105,62); throttle1 7->8(105,108) flash; liquid 8b->9(105,150) throttle to evap -->
+  <line x1="240" y1="150" x2="278" y2="110" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="150" y1="110" x2="300" y2="62" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="300" y1="62" x2="105" y2="62" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="105" y1="62" x2="105" y2="110" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="105" y1="110" x2="278" y2="110" stroke="#999" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <line x1="105" y1="110" x2="105" y2="150" stroke="#0b3d6b" stroke-width="2"/>
+  <line x1="105" y1="150" x2="240" y2="150" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="40" y="108" font-size="7" fill="#9a6b00">中間壓力(閃激室)</text>
+  <text x="250" y="200" font-size="8" fill="#1f7a4d">低壓級蒸發</text>
+  <text x="180" y="58" font-size="8" fill="#b00020">高壓級壓縮→冷凝</text>
+</svg>
+<div class="figcap">圖：雙級壓縮中間閃激室冷凍循環 P-h 圖（中間補氣冷卻提高 COP）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>請說明離心式泵之工作原理，並繪製其特性曲線，詳述效率、出口壓力、輸入功率隨排量變化之情形。（20 分）</div>
+<div class="a"><span class="lbl">答</span>原理：葉輪高速旋轉，離心力使液體獲動能與壓力，於蝸殼/擴散段轉為壓力能排出，葉輪中心形成低壓吸入。特性曲線：揚程隨排量增加而下降(H-Q)；效率先升後降有最佳效率點(BEP)；輸入功率隨排量增大而上升。</div>
+<div class="fig">
+<svg width="360" height="210" viewBox="0 0 360 210">
+  <line x1="45" y1="175" x2="340" y2="175" stroke="#333"/><line x1="45" y1="175" x2="45" y2="20" stroke="#333"/>
+  <text x="342" y="179" font-size="9" text-anchor="end">排量 Q</text>
+  <!-- Head curve (decreasing) -->
+  <path d="M55,55 Q150,65 250,120 Q290,145 320,170" fill="none" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="58" y="50" font-size="9" fill="#0b3d6b">揚程 H</text>
+  <!-- Efficiency curve (rise then fall) -->
+  <path d="M55,175 Q150,55 200,60 Q250,70 310,168" fill="none" stroke="#1f7a4d" stroke-width="2"/>
+  <text x="160" y="52" font-size="9" fill="#1f7a4d">效率 η</text>
+  <circle cx="200" cy="60" r="3" fill="#1f7a4d"/><text x="205" y="56" font-size="8" fill="#1f7a4d">BEP</text>
+  <!-- Power curve (increasing) -->
+  <path d="M55,150 Q150,135 250,100 Q300,82 325,68" fill="none" stroke="#b00020" stroke-width="2"/>
+  <text x="270" y="86" font-size="9" fill="#b00020">功率 P</text>
+</svg>
+<div class="figcap">圖：離心泵特性曲線（揚程 H↓、效率 η 先升後降、功率 P↑）</div>
+</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>請說明液壓舵機轉舵速度過慢及操舵後轉舵動作遲滯之原因。（20 分）</div>
+<div class="a"><span class="lbl">答</span>轉舵慢：液壓泵排量不足/磨損、油量低、油溫黏度不當、內外洩漏、安全閥過早洩壓、舵負荷過大、管路阻塞。動作遲滯：系統含空氣（可壓縮）、隨動機構間隙磨損、補償/浮動反饋不良、伺服閥遲鈍、緩衝閥設定不當。</div></div>
+
+<h3 class="year">111 年</h3>
+<div class="qa"><div class="q"><span class="lbl">一</span>何謂柴油引擎共軌噴油系統？與傳統噴油系統有何不同？並說明其優點。（20 分）</div>
+<div class="a"><span class="lbl">答</span>以高壓共用油軌儲存恆定高壓燃油，經電子控制電磁/壓電噴油器精確控制噴油正時、壓力與多段噴射；與凸輪驅動、噴壓隨轉速變化之傳統噴油泵不同。優點：噴壓獨立於轉速、低速亦高壓霧化佳、可多段噴射、燃燒更完全、油耗與 NOx/黑煙降低、控制彈性高。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">二</span>請解釋下列鍋爐輔助熱交換器並說明功用：過熱器、節熱器、降熱器及再熱器。（20 分）</div>
+<div class="a"><span class="lbl">答</span>過熱器：將飽和蒸汽再加熱為過熱蒸汽，提高效率並防汽輪機帶水。節熱器（省煤器）：利用煙氣餘熱預熱給水。降熱器（減溫器）：調控過熱蒸汽溫度於設定值。再熱器：將汽輪機高壓段排汽再加熱後送中低壓段，提高循環效率。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">三</span>請說明何種閥可遠端遙控信號開啟關閉？如何達成遙控？適合何種管路系統及功用。（20 分）</div>
+<div class="a"><span class="lbl">答</span>如快速關閉閥/遙控截止閥配致動器。遙控方式：以氣壓、液壓或電動致動器由控制室發信號操作；速閉閥常以鋼索或液壓於遠端釋放彈簧關閉。適用：燃油/滑油櫃出口速閉閥、壓載與艙底管系、貨油管系。功用：火災或緊急時遠端遮斷油路、防洩漏擴大、遠端操作壓載貨油。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">四</span>何謂船舶通風系統？並說明通風系統種類、各系統組成及運作特性。（20 分）</div>
+<div class="a"><span class="lbl">答</span>通風系統供應與排除空氣以維持艙室環境。種類：自然通風（風斗靠風壓溫差）、機械通風（風機強制），機械又分供氣式、排氣式、供排結合式。組成：風機、風管、風斗/百葉、防火擋板、濾網、調節風門。特性：機械通風風量穩定可控；機艙多正壓供氣助燃燒，廚房廁所油艙多負壓排氣防氣味擴散。</div></div>
+
+<div class="qa"><div class="q"><span class="lbl">五</span>何謂錨機？並說明錨機的功用及特性，根據動力源有那些分類？（20 分）</div>
+<div class="a"><span class="lbl">答</span>用於起拋錨與收放錨鏈之甲板機械（可兼帶纜）。功用：起錨、以剎車控制下錨速度、繫泊絞纜。特性：須能拉起錨與一定長度錨鏈、具剎車與離合、過載保護。動力源分類：蒸汽驅動、電動、電動液壓、液壓馬達驅動（及人力應急）。</div></div>
+
+<div style="margin-top:40px; text-align:center; color:#999; font-size:9pt; border-top:1px solid #ddd; padding-top:10px;">
+驗船師高等考試考題完整詳解 ｜ 整理日期：2026-06-06 ｜ 內容僅供讀書參考
+</div>
+
+<a href="#top" class="backtop" aria-label="回頂端">↑</a>
+
+<script>
+(function(){
+  // ---- 各年度可收合展開 ----
+  document.querySelectorAll('h3.year').forEach(function(h){
+    var wrap = document.createElement('div');
+    wrap.className = 'year-body';
+    var n = h.nextSibling;
+    while (n && !(n.nodeType === 1 && (n.classList.contains('year') || n.classList.contains('pdf')))) {
+      var next = n.nextSibling;
+      wrap.appendChild(n);
+      n = next;
+    }
+    h.parentNode.insertBefore(wrap, h.nextSibling);
+    h.classList.add('toggle');
+    h.addEventListener('click', function(){
+      h.classList.toggle('collapsed');
+      wrap.classList.toggle('hidden');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
