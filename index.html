@@ -361,7 +361,7 @@
 </div></div>
 
 <div class="qa"><div class="q"><span class="lbl">三</span>箱型船 L=50m、重 600t 均布全長；機械設備 200t 均布於中間 1/4 長；首尾 1/4 長各有貨艙均布 140t。平浮於 1000 kg/m³ 水中。繪剪力與彎矩曲線並求最大值。（20 分）</div>
-<div class="a"><span class="lbl">答</span><b class="k">最大剪力 ±40 t</b>（x=18.75、31.25 m）；<b class="k">最大彎矩 125 t·m（hogging，x=12.5、37.5 m）</b>，舯部 −62.5 t·m（sagging）。</div>
+<div class="a"><span class="lbl">答</span><b class="k">最大剪力 ±40 t</b>（x=18.75、31.25 m）；<b class="k">最大彎矩 ≈145.8 t·m（hogging，發生於剪力為 0 之 x≈14.58、35.42 m）</b>，舯部 −62.5 t·m（sagging）。<span style="color:#9a6b00">★ 彎矩極值在 SF=0 處，非分段邊界。</span></div>
 <div class="calc">
 <div class="ct">計算式</div>
 總重 W = 600+200+140+140 = 1080 t；浮力均布 b = 1080/50 = 21.6 t/m<br>
@@ -370,7 +370,7 @@
 &nbsp;&nbsp;0–12.5（船+貨）：12+11.2−21.6 = <b>+1.6</b>；&nbsp;12.5–18.75（純船）：12−21.6 = <b>−9.6</b><br>
 &nbsp;&nbsp;18.75–31.25（船+機）：12+16−21.6 = <b>+6.4</b>；&nbsp;31.25–37.5：<b>−9.6</b>；&nbsp;37.5–50：<b>+1.6</b><br>
 剪力 SF＝∫q：0 →+20(@12.5)→−40(@18.75)→+40(@31.25)→−20(@37.5)→0；<b class="k">|SF|max=40 t</b><br>
-彎矩 BM＝∫SF：0 →+125(@12.5)→+62.5(@18.75)→−62.5(@25)→+62.5(@31.25)→+125(@37.5)→0
+彎矩 BM＝∫SF（極值在 SF=0 處）：BM(12.5)=125 → <b class="k">BM(14.58)=145.8（最大,hog）</b> → BM(18.75)=62.5 → BM(25)=−62.5(sag) → BM(31.25)=62.5 → BM(35.42)=145.8 → 兩端=0<br>★ 注意：最大彎矩在剪力為 0 的 x=14.58（非段邊界 x=12.5）
 </div>
 <div class="fig">
 <svg width="560" height="430" viewBox="0 0 560 430">
@@ -396,14 +396,18 @@
   <!-- ====== Bending panel ====== -->
   <text x="6" y="305" font-size="10" font-weight="bold" fill="#0b3d6b">彎矩 BM (t·m)</text>
   <line x1="30" y1="360" x2="530" y2="360" stroke="#333" stroke-width="1"/>
-  <path d="M30,360 Q92,316 155,297.5 Q186,310 217.5,328.75 Q248,372 280,391.25 Q311,372 342.5,328.75 Q374,310 405,297.5 Q467,316 530,360" fill="none" stroke="#9a6b00" stroke-width="2"/>
-  <text x="135" y="292" font-size="8.5" fill="#9a6b00">+125 (hog)</text>
-  <text x="385" y="292" font-size="8.5" fill="#9a6b00">+125 (hog)</text>
+  <polyline points="30,360 155,297.5 175.8,287.1 217.5,328.75 280,391.25 342.5,328.75 384.2,287.1 405,297.5 530,360" fill="none" stroke="#9a6b00" stroke-width="2"/>
+  <circle cx="175.8" cy="287.1" r="3" fill="#9a6b00"/><circle cx="384.2" cy="287.1" r="3" fill="#9a6b00"/>
+  <circle cx="280" cy="391.25" r="3" fill="#b00020"/>
+  <text x="110" y="282" font-size="8.5" fill="#9a6b00">+145.8 (hog)</text>
+  <text x="355" y="282" font-size="8.5" fill="#9a6b00">+145.8 (hog)</text>
   <text x="255" y="405" font-size="8.5" fill="#b00020">−62.5 (sag)</text>
+  <text x="150" y="350" font-size="7.5" fill="#666">↑SF=0 (x=14.58)</text>
+  <text x="360" y="350" font-size="7.5" fill="#666">↑SF=0 (x=35.42)</text>
   <!-- x axis label -->
   <text x="270" y="425" font-size="9" text-anchor="middle">船長 x（艏 0 → 艉 50 m），刻度：12.5 / 18.75 / 25 / 31.25 / 37.5</text>
 </svg>
-<div class="figcap">圖：負荷強度、剪力(SF)、彎矩(BM)曲線；最大剪力 ±40 t、最大彎矩 125 t·m(hogging)</div>
+<div class="figcap">圖：負荷強度、剪力(SF)、彎矩(BM)曲線；最大剪力 ±40 t、最大彎矩 ≈145.8 t·m(hogging，在 SF=0 之 x≈14.58/35.42)</div>
 </div></div>
 
 <div class="qa"><div class="q"><span class="lbl">四</span>油輪 L=300m，舯剖面對中性軸慣性矩 I<sub>NA</sub>=752 m⁴，中性軸距龍骨上方 9.30m、距上甲板 9.70m，舯剖面承受縱向彎矩 10,200 MNm（舯拱）。求龍骨及上甲板之彎曲應力，並標明拉或壓。（20 分）</div>
